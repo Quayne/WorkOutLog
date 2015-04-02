@@ -1,0 +1,10 @@
+C:\Users\Quayne\OneDrive\Projects\WorkoutLog.Web\WorkoutLog.Web\bin\WorkoutLog.Web.dll.config
+C:\Users\Quayne\OneDrive\Projects\WorkoutLog.Web\WorkoutLog.Web\bin\WorkoutLog.Web.dll
+C:\Users\Quayne\OneDrive\Projects\WorkoutLog.Web\WorkoutLog.Web\bin\WorkoutLog.Web.pdb
+C:\Users\Quayne\OneDrive\Projects\WorkoutLog.Web\WorkoutLog.Web\bin\WorkoutLog.Core.dll
+C:\Users\Quayne\OneDrive\Projects\WorkoutLog.Web\WorkoutLog.Web\bin\WorkoutLog.Data.dll
+C:\Users\Quayne\OneDrive\Projects\WorkoutLog.Web\WorkoutLog.Web\bin\WorkoutLog.Core.pdb
+C:\Users\Quayne\OneDrive\Projects\WorkoutLog.Web\WorkoutLog.Web\bin\WorkoutLog.Data.pdb
+C:\Users\Quayne\OneDrive\Projects\WorkoutLog.Web\WorkoutLog.Web\obj\Debug\WorkoutLog.Web.csprojResolveAssemblyReference.cache
+C:\Users\Quayne\OneDrive\Projects\WorkoutLog.Web\WorkoutLog.Web\obj\Debug\WorkoutLog.Web.dll
+C:\Users\Quayne\OneDrive\Projects\WorkoutLog.Web\WorkoutLog.Web\obj\Debug\WorkoutLog.Web.pdb

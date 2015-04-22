@@ -13,6 +13,11 @@ namespace WorkoutLog.Data
     {
         public BodyPartSQLProvider(string connString) : base(connString) { }
 
+        /// <summary>
+        /// Get bodyParts by ID
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns>bodyParts</returns>
         public IBodyParts GetById(int Id)
         {
             var bodyParts = new BodyParts();

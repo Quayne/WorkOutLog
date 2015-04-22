@@ -80,7 +80,7 @@ namespace WorkoutLog.Data
         /// Inserts Exercise records
         /// </summary>
         /// <param name="exercise"></param>
-        /// <returns></returns>
+        /// <returns>true if the number of rows affected is greater than 0, false otherwise</returns>
         public override bool Insert(IExercise exercise)
         {            
             const string cmd = "INSERT INTO Exercise VALUES (@CurrentDate,@ExerciseSets,@Reps,@Weights,@BodyPartID,@ExerciseTypeID,@EmailAddress);";
@@ -110,6 +110,11 @@ namespace WorkoutLog.Data
             }           
         }
 
+        /// <summary>
+        /// Update record by ID
+        /// </summary>
+        /// <param name="exercise"></param>
+        /// <returns>true if numberOfRowsAffected = 1, false otherwise</returns>
         public override bool Update(IExercise exercise)
         {
             var isUpdated = false;
@@ -136,6 +141,11 @@ namespace WorkoutLog.Data
             return isUpdated;
         }
 
+        /// <summary>
+        /// Delete record by ID
+        /// </summary>
+        /// <param name="ID"></param>
+        /// <returns>false if number of rows affected = 0, true otherwise</returns>
         public override bool Delete(int ID)
         {
             using (var conn = new SqlConnection(_connString))
@@ -155,6 +165,10 @@ namespace WorkoutLog.Data
             }            
         }
 
+        /// <summary>
+        /// Get all Exercise record
+        /// </summary>
+        /// <returns>all Exercise record</returns>
         public override List<IExercise> GetAll()
         {
             var toReturn = new List<IExercise>();

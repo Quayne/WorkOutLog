@@ -38,6 +38,7 @@ namespace WorkoutLog.Core.Interfaces
         [Required(ErrorMessage = "You must select a exercise type.")]
         string ExerciseName { get; set; }
 
+        [Required(ErrorMessage = "You must select a body Part.")]
         string BodyParts { get; set; }
 
     }

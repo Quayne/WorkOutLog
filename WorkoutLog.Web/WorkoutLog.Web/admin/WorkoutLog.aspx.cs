@@ -15,15 +15,19 @@ namespace WorkoutLog.Web
         protected override void OnInit(EventArgs e)
         {
             base.OnInit(e);
-            LoadBodyPartsList();
-            LoadExerciseTypeList();
+            LoadBodyPartsList(); //call LoadBodyPartsList method
+            LoadExerciseTypeList(); //call LoadExerciseTypeList method
 
             // if not post back, get excercise by id
             if (!IsPostBack && ID > 0)
-            {
-                // set IExercise Properties
+            {                
+                //reference to the ExerciseSQLProvider class
                 var provider = new ExerciseSQLProvider(System.Configuration.ConfigurationManager.ConnectionStrings["ExerciseConnString"].ConnectionString);
+
+                //Get record by ID
                 var item = provider.GetById(ID);
+
+                // set IExercise Properties
                 BodyPartID = item.BodyPartID;
                 ExerciseTypeID = item.ExerciseTypeID;
                 ExerciseSets = item.ExerciseSets;
@@ -32,42 +36,61 @@ namespace WorkoutLog.Web
             }            
         }
 
+        /// <summary>
+        /// Load the Body Parts Dropdown list
+        /// </summary>
         private void LoadBodyPartsList()
         {
+            //reference to the ExerciseSQLProvider class
             var provider = new BodyPartSQLProvider(System.Configuration.ConfigurationManager.ConnectionStrings["ExerciseConnString"].ConnectionString);
+
+            //get all the records from the database
             var items = provider.GetAll();
 
+            //Sets the data source that provides data for populating the ddlBodyParts control
             ddlBodyParts.DataSource = items;
+
+            //Binding data to the ddlBodyParts control
             ddlBodyParts.DataBind();
         }
 
+        /// <summary>
+        /// Load the Exercise type Dropdown list
+        /// </summary>
         private void LoadExerciseTypeList()
         {
+            //reference to the ExerciseSQLProvider class
             var provider = new ExerciseTypeSQLProvider(System.Configuration.ConfigurationManager.ConnectionStrings["ExerciseConnString"].ConnectionString);
+
+            //get all the records from the database
             var items = provider.GetAll();
 
+            //Sets the data source that provides data for populating the ddlExerciseName control
             ddlExerciseName.DataSource = items;
+
+            //Binding data to the ddlExerciseName control
             ddlExerciseName.DataBind();
         }
 
         /// <summary>
-        /// 
+        /// Determine whether to do a insert or a update
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         protected void btnSave_Click(object sender, EventArgs e)
         {
+            //reference to the ExerciseSQLProvider class
             var provider = new ExerciseSQLProvider(System.Configuration.ConfigurationManager.ConnectionStrings["ExerciseConnString"].ConnectionString);
 
             //if query string have ID, do update instead of insert
             if (Request.QueryString["id"] != null)
             {
                 if(provider.Update(this))
-                    Response.Redirect("~/admin/index.aspx");
+                    Response.Redirect("~/admin/index.aspx"); //redirect to index.aspx page
             }
             else if (provider.Insert(this))
             {
-                Response.Redirect("~/admin/index.aspx");
+                Response.Redirect("~/admin/index.aspx"); //redirect to index.aspx page
             }              
         }
 

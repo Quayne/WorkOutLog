@@ -10,14 +10,24 @@ namespace WorkoutLog.Web
 {
     public partial class WorkoutTable : System.Web.UI.Page
     {
-
+        /// <summary>
+        /// Override the OnPreRender method to set _________ after any event occur
+        /// </summary>
+        /// <param name="e"></param>
         protected override void OnPreRender(EventArgs e)
         {
             base.OnPreRender(e);
 
+            //reference to the ExerciseSQLProvider class
             var provider = new ExerciseSQLProvider(System.Configuration.ConfigurationManager.ConnectionStrings["ExerciseConnString"].ConnectionString);
+
+            //get all the records from the database
             var items = provider.GetAll();
+
+            //Sets the data source that provides data for populating the repeater
             Repeater1.DataSource = items;
+
+            //Binding data to the repeater
             Repeater1.DataBind();
         }
 
@@ -28,10 +38,15 @@ namespace WorkoutLog.Web
         /// <param name="e">ExerciseID</param>
         protected void btnDelete_Command(object sender, CommandEventArgs e)
         {
-            int temp;
+            int temp; //hold the ID passed in the query string
+
+            //validate the input for integer value
             int.TryParse(e.CommandArgument as string, out temp);
 
+            //reference to the ExerciseSQLProvider class
             var provider = new ExerciseSQLProvider(System.Configuration.ConfigurationManager.ConnectionStrings["ExerciseConnString"].ConnectionString);
+
+            //pass the Exercise ID that should be deleted
             provider.Delete(temp);
         }
         

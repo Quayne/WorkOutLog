@@ -13,19 +13,27 @@ namespace WorkoutLog.Data
     {
         public ExerciseSQLProvider(string connString) : base(connString) { }
 
+        /// <summary>
+        /// Get exercise by ID
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns>record with the specified Id</returns>
         public IExercise GetById(int Id)
         {
             var exercise = new Exercise();
             string selectQuery = "SELECT * FROM Exercise WHERE ExerciseID = @ID";
 
-            using (var conn = new SqlConnection(_connString))
+            using (var conn = new SqlConnection(_connString)) //Set connection string
             {
-                conn.Open();
+                conn.Open();//Open connection
+                
+                //Set SQL command and pass in the SQL statement and the connection string to use
                 SqlCommand command = new SqlCommand(selectQuery, conn);
 
+                //Add new command parameter
                 command.Parameters.Add(new SqlParameter("@ID", Id));
 
-                command.ExecuteNonQuery();
+                command.ExecuteNonQuery(); //Executes the SQL statement against the connection
 
                 using (var dr = command.ExecuteReader())
                 {
@@ -68,6 +76,11 @@ namespace WorkoutLog.Data
             return exercise;
         }
 
+        /// <summary>
+        /// Inserts Exercise records
+        /// </summary>
+        /// <param name="exercise"></param>
+        /// <returns></returns>
         public override bool Insert(IExercise exercise)
         {            
             const string cmd = "INSERT INTO Exercise VALUES (@CurrentDate,@ExerciseSets,@Reps,@Weights,@BodyPartID,@ExerciseTypeID,@EmailAddress);";
@@ -85,16 +98,16 @@ namespace WorkoutLog.Data
                     sql.Parameters.Add(new SqlParameter("@ExerciseTypeID", exercise.ExerciseTypeID));
                     sql.Parameters.Add(new SqlParameter("@EmailAddress", "quayne@gmail.com"));                 
 
-                    sql.ExecuteNonQuery();
+                    //return true if the number of rows affected is greater than 0
+                    return sql.ExecuteNonQuery() > 0;
                 }
             }
             catch(Exception ex)
             {
                 //log the exception
+                //return false
                 throw ex;
-            }
-
-            return true;
+            }           
         }
 
         public override bool Update(IExercise exercise)

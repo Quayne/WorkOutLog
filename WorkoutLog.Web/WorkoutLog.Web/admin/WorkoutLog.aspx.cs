@@ -50,6 +50,11 @@ namespace WorkoutLog.Web
             ddlExerciseName.DataBind();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btnSave_Click(object sender, EventArgs e)
         {
             var provider = new ExerciseSQLProvider(System.Configuration.ConfigurationManager.ConnectionStrings["ExerciseConnString"].ConnectionString);
@@ -67,7 +72,7 @@ namespace WorkoutLog.Web
         }
 
 
-        public new int ID //need explanation
+        public new int ID 
         {
             get
             {
@@ -154,7 +159,7 @@ namespace WorkoutLog.Web
             get
             {
                 int exerciseTypeID;
-                int.TryParse(ddlExerciseName.SelectedValue, out exerciseTypeID); //not sure if the selected value should be int or not
+                int.TryParse(ddlExerciseName.SelectedValue, out exerciseTypeID); 
                 return exerciseTypeID;
             }
             set

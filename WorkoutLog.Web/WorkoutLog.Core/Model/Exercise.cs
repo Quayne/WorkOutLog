@@ -8,7 +8,7 @@ using WorkoutLog.Core.Interfaces;
 
 namespace WorkoutLog.Core.Model
 {
-    
+    [Serializable]
     public class Exercise : IExercise
     {        
         public int ID

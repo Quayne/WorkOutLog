@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\SerializationHelper.cs" />
     <Compile Include="Interfaces\IBodyParts.cs" />
     <Compile Include="Interfaces\IExercise.cs" />
     <Compile Include="Interfaces\IExerciseType.cs" />
@@ -49,6 +50,7 @@
     <Compile Include="Model\ExerciseType.cs" />
     <Compile Include="Model\Persons.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Variables.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

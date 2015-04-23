@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using WorkoutLog.Core;
 using WorkoutLog.Data;
 
 namespace WorkoutLog.Web
@@ -18,11 +19,14 @@ namespace WorkoutLog.Web
         {
             base.OnPreRender(e);
 
-            //reference to the ExerciseSQLProvider class
-            var provider = new ExerciseSQLProvider(System.Configuration.ConfigurationManager.ConnectionStrings["ExerciseConnString"].ConnectionString);
+            ////reference to the ExerciseSQLProvider class
+            //var provider = new ExerciseSQLProvider(System.Configuration.ConfigurationManager.ConnectionStrings["ExerciseConnString"].ConnectionString);
 
-            //get all the records from the database
-            var items = provider.GetAll();
+            ////get all the records from the database
+            //var items = provider.GetAll();
+
+            var provider = new ExerciseXMLProvider(Server.MapPath(Variables.ExerciseXmlFilePath));
+            var items = provider.ExerciseList;
 
             //Sets the data source that provides data for populating the repeater
             Repeater1.DataSource = items;
@@ -38,6 +42,8 @@ namespace WorkoutLog.Web
         /// <param name="e">ExerciseID</param>
         protected void btnDelete_Command(object sender, CommandEventArgs e)
         {
+            //TODO: Remove exercise from XML
+
             int temp; //hold the ID passed in the query string
 
             //validate the input for integer value

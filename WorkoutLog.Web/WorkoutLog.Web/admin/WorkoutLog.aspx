@@ -28,6 +28,8 @@
             <label class="col-sm-2 control-label">Body Part</label>
             <div class="col-sm-4">
                 <asp:DropDownList ID="ddlBodyParts" runat="server" CssClass="form-control" DataTextField="BodyPartName" DataValueField="ID">
+                    <asp:ListItem Text="Arm" Value="1"></asp:ListItem>
+                    <asp:ListItem Text="Leg" Value="2"></asp:ListItem>
                 </asp:DropDownList>
                 
             </div>
@@ -37,6 +39,8 @@
             <label class="col-sm-2 control-label">Exercise Type</label>
             <div class="col-sm-4">                
                 <asp:DropDownList ID="ddlExerciseName" runat="server" CssClass="form-control" DataTextField="ExerciseName" DataValueField="ID">
+                    <asp:ListItem Text="Tricep" Value="10"></asp:ListItem>
+                    <asp:ListItem Text="Bicep" Value="11"></asp:ListItem>
                 </asp:DropDownList>
             </div>
         </div>

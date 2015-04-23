@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -7,6 +8,7 @@ using System.Web.UI.WebControls;
 using WorkoutLog.Core.Interfaces;
 using WorkoutLog.Core.Model;
 using WorkoutLog.Data;
+using WorkoutLog.Core;
 
 namespace WorkoutLog.Web
 {
@@ -15,25 +17,25 @@ namespace WorkoutLog.Web
         protected override void OnInit(EventArgs e)
         {
             base.OnInit(e);
-            LoadBodyPartsList(); //call LoadBodyPartsList method
-            LoadExerciseTypeList(); //call LoadExerciseTypeList method
+            //LoadBodyPartsList(); //call LoadBodyPartsList method
+            //LoadExerciseTypeList(); //call LoadExerciseTypeList method
 
             // if not post back, get excercise by id
-            if (!IsPostBack && ID > 0)
-            {                
-                //reference to the ExerciseSQLProvider class
-                var provider = new ExerciseSQLProvider(System.Configuration.ConfigurationManager.ConnectionStrings["ExerciseConnString"].ConnectionString);
+            //if (!IsPostBack && ID > 0)
+            //{
+            //    //Create instance of ExerciseSQLProvider
+            //    var provider = new ExerciseSQLProvider(System.Configuration.ConfigurationManager.ConnectionStrings["ExerciseConnString"].ConnectionString);
 
-                //Get record by ID
-                var item = provider.GetById(ID);
+            //    //Get record by ID
+            //    var item = provider.GetById(ID);
 
-                // set IExercise Properties
-                BodyPartID = item.BodyPartID;
-                ExerciseTypeID = item.ExerciseTypeID;
-                ExerciseSets = item.ExerciseSets;
-                Reps = item.Reps;
-                Weights = item.Weights;
-            }            
+            //    // set IExercise Properties
+            //    BodyPartID = item.BodyPartID;
+            //    ExerciseTypeID = item.ExerciseTypeID;
+            //    ExerciseSets = item.ExerciseSets;
+            //    Reps = item.Reps;
+            //    Weights = item.Weights;
+            //}
         }
 
         /// <summary>
@@ -41,7 +43,7 @@ namespace WorkoutLog.Web
         /// </summary>
         private void LoadBodyPartsList()
         {
-            //reference to the ExerciseSQLProvider class
+            //Create instance of ExerciseSQLProvider
             var provider = new BodyPartSQLProvider(System.Configuration.ConfigurationManager.ConnectionStrings["ExerciseConnString"].ConnectionString);
 
             //get all the records from the database
@@ -59,7 +61,7 @@ namespace WorkoutLog.Web
         /// </summary>
         private void LoadExerciseTypeList()
         {
-            //reference to the ExerciseSQLProvider class
+            //Create instance of ExerciseSQLProvider
             var provider = new ExerciseTypeSQLProvider(System.Configuration.ConfigurationManager.ConnectionStrings["ExerciseConnString"].ConnectionString);
 
             //get all the records from the database
@@ -79,23 +81,47 @@ namespace WorkoutLog.Web
         /// <param name="e"></param>
         protected void btnSave_Click(object sender, EventArgs e)
         {
-            //reference to the ExerciseSQLProvider class
-            var provider = new ExerciseSQLProvider(System.Configuration.ConfigurationManager.ConnectionStrings["ExerciseConnString"].ConnectionString);
+            SaveXML();
 
-            //if query string have ID, do update instead of insert
-            if (Request.QueryString["id"] != null)
+            //Create instance of ExerciseSQLProvider
+            //var provider = new ExerciseSQLProvider(System.Configuration.ConfigurationManager.ConnectionStrings["ExerciseConnString"].ConnectionString);
+
+            ////if query string have ID, do update instead of insert
+            //if (Request.QueryString["id"] != null)
+            //{
+            //    if(provider.Update(this))
+            //        Response.Redirect("~/admin/index.aspx"); //redirect to index.aspx page
+            //}
+            //else if (provider.Insert(this))
+            //{
+            //    Response.Redirect("~/admin/index.aspx"); //redirect to index.aspx page
+            //}              
+        }
+
+        private void SaveXML()
+        {
+            //TODO: check if item exist and update the item else add
+            //TODO: Increment ID field, check for the id with the highest value then add 1;
+
+            var provider = new ExerciseXMLProvider(Server.MapPath(Variables.ExerciseXmlFilePath));
+            provider.ExerciseList.Add(new Exercise
             {
-                if(provider.Update(this))
-                    Response.Redirect("~/admin/index.aspx"); //redirect to index.aspx page
-            }
-            else if (provider.Insert(this))
-            {
-                Response.Redirect("~/admin/index.aspx"); //redirect to index.aspx page
-            }              
+                ID = this.ID,
+                BodyPartID = this.BodyPartID,
+                EmailAddress = this.EmailAddress,
+                ExerciseName = this.ExerciseName,
+                BodyParts = this.BodyParts,
+                ExerciseSets = this.ExerciseSets,
+                ExerciseTypeID = this.ExerciseTypeID,
+                Reps = this.Reps,
+                Weights = this.Weights,
+                CurrentDate = DateTime.Now
+            });
+            provider.Save();
         }
 
 
-        public new int ID 
+        public new int ID
         {
             get
             {
@@ -182,7 +208,7 @@ namespace WorkoutLog.Web
             get
             {
                 int exerciseTypeID;
-                int.TryParse(ddlExerciseName.SelectedValue, out exerciseTypeID); 
+                int.TryParse(ddlExerciseName.SelectedValue, out exerciseTypeID);
                 return exerciseTypeID;
             }
             set
@@ -201,7 +227,7 @@ namespace WorkoutLog.Web
         {
             get
             {
-                return ddlExerciseName.SelectedValue;                
+                return ddlExerciseName.SelectedValue;
             }
             set
             {
@@ -220,7 +246,7 @@ namespace WorkoutLog.Web
                 throw new NotImplementedException();
             }
         }
-        
+
         public DateTime CurrentDate
         {
             get
@@ -228,7 +254,7 @@ namespace WorkoutLog.Web
                 return DateTime.Now;
             }
             set
-            {                
+            {
                 throw new NotImplementedException();
             }
         }

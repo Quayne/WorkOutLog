@@ -55,7 +55,7 @@ namespace WorkoutLog.Data
         public override bool Delete(int ID)
         {
             string cmd = "DELETE FROM BodyParts WHERE BodyPartsID = @ID";
-
+            //TODO: 
             return false;
         }
 

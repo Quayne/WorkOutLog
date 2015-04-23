@@ -25,7 +25,7 @@ namespace WorkoutLog.Data
             }
             else
             {
-                var xmlContent = System.IO.File.ReadAllText(xmlFilePath);
+                var xmlContent = System.IO.File.ReadAllText(_xmlFilePath);
                 _exerciseList = SerializationHelper.Deserialize<List<Exercise>>(xmlContent);
             }
         }
@@ -41,6 +41,11 @@ namespace WorkoutLog.Data
         public void Save()
         {
             SerializationHelper.Serialize<List<Exercise>>(_xmlFilePath, _exerciseList);
+        }
+
+        public void Delete(int id)
+        {
+            SerializationHelper.Deserialize<List<Exercise>>(id.ToString());
         }
     }
 }

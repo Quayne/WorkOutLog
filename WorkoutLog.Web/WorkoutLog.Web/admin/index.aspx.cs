@@ -50,11 +50,14 @@ namespace WorkoutLog.Web
             int.TryParse(e.CommandArgument as string, out temp);
 
             //reference to the ExerciseSQLProvider class
-            var provider = new ExerciseSQLProvider(System.Configuration.ConfigurationManager.ConnectionStrings["ExerciseConnString"].ConnectionString);
+            //var provider = new ExerciseSQLProvider(System.Configuration.ConfigurationManager.ConnectionStrings["ExerciseConnString"].ConnectionString);
+
+            var provider = new ExerciseXMLProvider(Server.MapPath(Variables.ExerciseXmlFilePath));
 
             //pass the Exercise ID that should be deleted
             provider.Delete(temp);
         }
         
+   
     }
 }

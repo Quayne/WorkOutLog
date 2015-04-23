@@ -101,12 +101,14 @@ namespace WorkoutLog.Web
         private void SaveXML()
         {
             //TODO: check if item exist and update the item else add
-            //TODO: Increment ID field, check for the id with the highest value then add 1;
 
             var provider = new ExerciseXMLProvider(Server.MapPath(Variables.ExerciseXmlFilePath));
+
+            int newId = incrementHighestId(provider);
+
             provider.ExerciseList.Add(new Exercise
             {
-                ID = this.ID,
+                ID = newId,
                 BodyPartID = this.BodyPartID,
                 EmailAddress = this.EmailAddress,
                 ExerciseName = this.ExerciseName,
@@ -118,6 +120,25 @@ namespace WorkoutLog.Web
                 CurrentDate = DateTime.Now
             });
             provider.Save();
+            Response.Redirect("~/admin/index.aspx"); //redirect to index.aspx page
+        }
+
+        /// <summary>
+        /// Check for the id with the highest value then add 1
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="array"></param>
+        /// <returns>The highest ID</returns>
+        private int incrementHighestId(ExerciseXMLProvider array)
+        {
+            int highestID = array.ExerciseList[0].ID;
+
+            for (int i = 0; i < array.ExerciseList.Count; i++)
+            {
+                if (array.ExerciseList[i].ID > highestID)
+                    highestID = array.ExerciseList[i].ID;
+            }              
+            return highestID + 1;
         }
 
 

@@ -52,7 +52,17 @@ namespace WorkoutLog.Web
             //reference to the ExerciseSQLProvider class
             //var provider = new ExerciseSQLProvider(System.Configuration.ConfigurationManager.ConnectionStrings["ExerciseConnString"].ConnectionString);
 
-            var provider = new ExerciseXMLProvider(Server.MapPath(Variables.ExerciseXmlFilePath));
+            var provider = new ExerciseXMLProvider(Server.MapPath(Variables.ExerciseXmlFilePath));       
+
+            // find the index with the ID and delete it
+            for (int i = 0; i < provider.ExerciseList.Count; i++)
+            {
+                if (provider.ExerciseList[i].ID == temp)
+                {
+                    
+                }
+                    
+            }
 
             //pass the Exercise ID that should be deleted
             provider.Delete(temp);

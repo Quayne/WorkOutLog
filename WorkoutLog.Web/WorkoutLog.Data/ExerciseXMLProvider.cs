@@ -47,5 +47,7 @@ namespace WorkoutLog.Data
         {
             SerializationHelper.Deserialize<List<Exercise>>(id.ToString());
         }
+
+        
     }
 }

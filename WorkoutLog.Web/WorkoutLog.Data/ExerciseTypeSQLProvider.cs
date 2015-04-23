@@ -22,7 +22,7 @@ namespace WorkoutLog.Data
                 const string selectQuery = "SELECT * FROM ExerciseType WHERE ExerciseTypeID = @ID";
 
                 SqlCommand command = new SqlCommand(selectQuery, conn);
-                command.Parameters.Add("@ID", Id);
+                command.Parameters.AddWithValue("@ID", Id);
                 command.ExecuteNonQuery();
 
                 using (var dr = command.ExecuteReader())

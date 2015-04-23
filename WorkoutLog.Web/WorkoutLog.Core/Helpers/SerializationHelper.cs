@@ -21,7 +21,9 @@ namespace WorkoutLog.Core.Helpers
                     stream.Dispose();
                 }
                 catch (Exception ex)
-                {  }
+                {
+                    throw ex;
+                }
             }
         }
 

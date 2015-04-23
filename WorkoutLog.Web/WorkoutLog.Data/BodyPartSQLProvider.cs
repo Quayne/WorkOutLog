@@ -29,7 +29,7 @@ namespace WorkoutLog.Data
 
                 SqlCommand command = new SqlCommand(selectQuery, conn);
 
-                command.Parameters.Add("@ID", Id);
+                command.Parameters.AddWithValue("@ID", Id);
                 command.ExecuteNonQuery();
 
                 using (var dr = command.ExecuteReader())
@@ -54,7 +54,7 @@ namespace WorkoutLog.Data
 
         public override bool Delete(int ID)
         {
-            string cmd = "DELETE FROM BodyParts WHERE BodyPartsID = @ID";
+           // string cmd = "DELETE FROM BodyParts WHERE BodyPartsID = @ID";
             //TODO: 
             return false;
         }

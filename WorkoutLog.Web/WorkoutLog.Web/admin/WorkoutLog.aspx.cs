@@ -131,8 +131,8 @@ namespace WorkoutLog.Web
         /// <returns>The highest ID</returns>
         private int incrementHighestId(ExerciseXMLProvider array)
         {
-            int highestID = array.ExerciseList[0].ID;
-
+            int highestID = (array.ExerciseList.Count() == 0) ? 0 : array.ExerciseList[0].ID;
+            
             for (int i = 0; i < array.ExerciseList.Count; i++)
             {
                 if (array.ExerciseList[i].ID > highestID)

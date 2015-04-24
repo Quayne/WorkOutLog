@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using WorkoutLog.Core;
+using WorkoutLog.Core.Model;
 using WorkoutLog.Data;
 
 namespace WorkoutLog.Web
@@ -52,17 +53,7 @@ namespace WorkoutLog.Web
             //reference to the ExerciseSQLProvider class
             //var provider = new ExerciseSQLProvider(System.Configuration.ConfigurationManager.ConnectionStrings["ExerciseConnString"].ConnectionString);
 
-            var provider = new ExerciseXMLProvider(Server.MapPath(Variables.ExerciseXmlFilePath));       
-
-            // find the index with the ID and delete it
-            for (int i = 0; i < provider.ExerciseList.Count; i++)
-            {
-                if (provider.ExerciseList[i].ID == temp)
-                {
-                    
-                }
-                    
-            }
+            var provider = new ExerciseXMLProvider(Server.MapPath(Variables.ExerciseXmlFilePath));                 
 
             //pass the Exercise ID that should be deleted
             provider.Delete(temp);

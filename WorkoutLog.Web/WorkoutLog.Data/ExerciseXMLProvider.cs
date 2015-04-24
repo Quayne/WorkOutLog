@@ -45,7 +45,20 @@ namespace WorkoutLog.Data
 
         public void Delete(int id)
         {
-            SerializationHelper.Deserialize<List<Exercise>>(id.ToString());
+            // find the index with the ID and delete it
+            Exercise exerciseTemp = null;
+            for (int i = 0; i < ExerciseList.Count; i++)
+            {
+                if (ExerciseList[i].ID == id)
+                {
+                    exerciseTemp = ExerciseList[i];
+                }
+                
+            }
+            if (exerciseTemp != null)
+                ExerciseList.Remove(exerciseTemp);
+
+            Save();
         }
 
         

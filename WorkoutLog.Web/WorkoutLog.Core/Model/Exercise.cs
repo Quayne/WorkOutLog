@@ -10,14 +10,16 @@ namespace WorkoutLog.Core.Model
 {
     [Serializable]
     public class Exercise : IExercise
-    {        
+    {
+        private string _email;
+        private DateTime _currentDate = DateTime.Now;
+
         public int ID
         {
             get;
             set;
         }
-
-        private DateTime _currentDate = DateTime.Now;
+                
         public DateTime CurrentDate
         {
             get
@@ -48,7 +50,7 @@ namespace WorkoutLog.Core.Model
             set;
         }
 
-        private string _email;
+        
         public string EmailAddress
         {
             get { return "quayne@gmail.com"; }

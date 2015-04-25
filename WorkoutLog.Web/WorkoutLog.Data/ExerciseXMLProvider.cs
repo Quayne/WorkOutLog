@@ -30,11 +30,21 @@ namespace WorkoutLog.Data
             }
         }
 
-        public List<Exercise> ExerciseList
+        public List<Exercise> GetAll()
+        {
+            return ExerciseList;
+        }
+
+        private List<Exercise> ExerciseList
         {
             get
             {
+                if (_exerciseList == null)
+                    _exerciseList = new List<Exercise>();
+
                 return _exerciseList;
+
+                //return _exerciseList ?? (_exerciseList =  new List<Exercise>());
             }
         }
 
@@ -43,9 +53,13 @@ namespace WorkoutLog.Data
             SerializationHelper.Serialize<List<Exercise>>(_xmlFilePath, _exerciseList);
         }
 
+
+        /// <summary>
+        /// find the index with the ID has  and delete it
+        /// </summary>
+        /// <param name="id"></param>
         public void Delete(int id)
-        {
-            // find the index with the ID and delete it
+        {            
             Exercise exerciseTemp = null;
             for (int i = 0; i < ExerciseList.Count; i++)
             {
@@ -61,6 +75,69 @@ namespace WorkoutLog.Data
             Save();
         }
 
-        
+        /// <summary>
+        /// Find the ID of the exercise that has been passed in and update it.
+        /// </summary>
+        /// <param name="exercise"></param>
+        public void Update(IExercise exercise)
+        {
+            for (int i = 0; i < ExerciseList.Count; i++)
+            {
+                if (ExerciseList[i].ID == exercise.ID)
+                {
+                    ExerciseList[i].ID = exercise.ID;
+                    ExerciseList[i].BodyPartID = exercise.BodyPartID;
+                    ExerciseList[i].EmailAddress = exercise.EmailAddress;
+                    ExerciseList[i].ExerciseName = exercise.ExerciseName;
+                    ExerciseList[i].BodyParts = exercise.BodyParts;
+                    ExerciseList[i].ExerciseSets = exercise.ExerciseSets;
+                    ExerciseList[i].ExerciseTypeID = exercise.ExerciseTypeID;
+                    ExerciseList[i].Reps = exercise.Reps;
+                    ExerciseList[i].Weights = exercise.Weights;
+                    ExerciseList[i].CurrentDate = exercise.CurrentDate;
+                }
+            }
+            Save();
+        }
+
+        /// <summary>
+        /// Insert a new exercise
+        /// </summary>
+        /// <param name="exercise"></param>
+        public void Insert(IExercise exercise)
+        {
+            int newId = IncrementHighestId();
+           
+            ExerciseList.Add(new Exercise
+            {
+                ID = newId,
+                BodyPartID = exercise.BodyPartID,
+                EmailAddress = exercise.EmailAddress,
+                ExerciseName = exercise.ExerciseName,
+                BodyParts = exercise.BodyParts,
+                ExerciseSets = exercise.ExerciseSets,
+                ExerciseTypeID = exercise.ExerciseTypeID,
+                Reps = exercise.Reps,
+                Weights = exercise.Weights,
+                CurrentDate = DateTime.Now
+            });
+            Save();
+        }
+
+        /// <summary>
+        /// Check for the ID with the highest value then add 1
+        /// </summary>
+        /// <returns>The highest ID + 1</returns>
+        private int IncrementHighestId()
+        {
+            int highestID = (ExerciseList.Count() == 0) ? 0 : ExerciseList[0].ID;
+
+            for (int i = 0; i < ExerciseList.Count; i++)
+            {
+                if (ExerciseList[i].ID > highestID)
+                    highestID = ExerciseList[i].ID;
+            }
+            return highestID + 1;
+        }
     }
 }

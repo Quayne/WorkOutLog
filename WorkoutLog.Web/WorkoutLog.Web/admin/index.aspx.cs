@@ -27,7 +27,7 @@ namespace WorkoutLog.Web
             //var items = provider.GetAll();
 
             var provider = new ExerciseXMLProvider(Server.MapPath(Variables.ExerciseXmlFilePath));
-            var items = provider.ExerciseList;
+            var items = provider.GetAll();
 
             //Sets the data source that provides data for populating the repeater
             Repeater1.DataSource = items;
@@ -37,6 +37,7 @@ namespace WorkoutLog.Web
         }
 
         /// <summary>
+        /// TODO: Need to determine if you want to delete from the database or the XML file
         /// Get the selected ID and pass it as an argument to the ExerciseSQLProvider to delete the selected record.
         /// </summary>
         /// <param name="sender"></param>
@@ -45,10 +46,10 @@ namespace WorkoutLog.Web
         {
             //TODO: Remove exercise from XML
 
-            int temp; //hold the ID passed in the query string
+            int tempId; //hold the ID passed in the query string
 
             //validate the input for integer value
-            int.TryParse(e.CommandArgument as string, out temp);
+            int.TryParse(e.CommandArgument as string, out tempId);
 
             //reference to the ExerciseSQLProvider class
             //var provider = new ExerciseSQLProvider(System.Configuration.ConfigurationManager.ConnectionStrings["ExerciseConnString"].ConnectionString);
@@ -56,7 +57,7 @@ namespace WorkoutLog.Web
             var provider = new ExerciseXMLProvider(Server.MapPath(Variables.ExerciseXmlFilePath));                 
 
             //pass the Exercise ID that should be deleted
-            provider.Delete(temp);
+            provider.Delete(tempId);
         }
         
    

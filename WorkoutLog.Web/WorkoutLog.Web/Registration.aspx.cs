@@ -13,5 +13,10 @@ namespace WorkoutLog.Web
         {
 
         }
+
+        protected void SubmitRegistrationEvent(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

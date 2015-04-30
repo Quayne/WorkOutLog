@@ -5,9 +5,9 @@
     <div class="container top-edge" >
         
         <div class="form-group">
-            <label class="col-lg-2 control-label">Username</label>
+            <asp:Label ID="usernameLabel" AssociatedControlId="usernameTextBox" Text="Username" CssClass="col-lg-2 control-label" runat="server" />
             <div class="col-lg-4">
-                <input type="text" class="form-control" id="username" placeholder="Hazza" />
+                <asp:TextBox type="text" CssClass="form-control" ID="usernameTextBox" placeholder="Hazza"  runat="server"/>
             </div>
             <div class="col-lg-6">
                 <p class="bg-danger" id="usernameMsg"></p>              
@@ -15,9 +15,9 @@
         </div>
 
       <div class="form-group">
-        <label  class="col-sm-2 control-label">Email</label>
+          <asp:Label ID="emailLabel" AssociatedControlId="emailTextBox" Text="Email" CssClass="col-lg-2 control-label" runat="server" />
         <div class="col-lg-4">
-          <input type="email" class="form-control" id="emailTextBox" placeholder="username@domain.com" />
+          <asp:TextBox type="email" CssClass="form-control" ID="emailTextBox" placeholder="username@domain.com"  runat="server"/>
         </div>
           <div class="col-lg-6">
               <p class="bg-danger" id="emailMsg"></p>
@@ -25,9 +25,9 @@
       </div>
 
       <div class="form-group">
-        <label class="col-lg-2 control-label">Password</label>
+          <asp:Label ID="passwordLabel" AssociatedControlId="passwordTextBox" Text="Password" CssClass="col-lg-2 control-label" runat="server" />
         <div class="col-lg-4">
-          <input type="password" class="form-control" id="password" placeholder="Password" />
+          <asp:TextBox type="password" CssClass="form-control" ID="passwordTextBox" placeholder="Password"  runat="server"/>
         </div> 
           <div class="col-lg-6">
               <p class="bg-danger" id="passwordMsg"></p>
@@ -35,16 +35,16 @@
       </div>
 
       <div class="form-group">
-        <label class="col-lg-2 control-label">Confirm Password</label>
+          <asp:Label ID="confirmPasswordLabel" AssociatedControlId="confirmPasswordTextBox" Text="Re-type Password" CssClass="col-lg-2 control-label" runat="server" />
         <div class="col-lg-4">
-          <input type="password" class="form-control" id="confirmPassword" placeholder="Re-type Password" />
+          <asp:TextBox type="password" CssClass="form-control" id="confirmPasswordTextBox" placeholder="Re-type Password"  runat="server"/>
         </div> 
       </div>
         
 
       <div class="form-group">
         <div class="col-lg-offset-2 col-lg-4">
-          <button type="submit" class="btn btn-default" onclick="return submitRegistrationEvent()">Register</button>
+            <asp:Button ID="registerButton" type="submit" CssClass="btn btn-primary" Text="REGISTER" OnClick="SubmitRegistrationEvent" runat="server" />
         </div>
       </div>
 

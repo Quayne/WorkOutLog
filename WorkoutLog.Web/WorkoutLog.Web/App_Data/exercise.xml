@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<ArrayOfExercise xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Exercise>
+    <ID>1</ID>
+    <CurrentDate>2015-04-30T15:15:02.4705149-04:00</CurrentDate>
+    <ExerciseSets>3</ExerciseSets>
+    <Weights>50</Weights>
+    <Reps>100</Reps>
+    <EmailAddress>quayne@gmail.com</EmailAddress>
+    <BodyPartID>0</BodyPartID>
+    <ExerciseTypeID>0</ExerciseTypeID>
+    <ExerciseName>Tricep</ExerciseName>
+    <BodyParts>Arms</BodyParts>
+  </Exercise>
+  <Exercise>
+    <ID>2</ID>
+    <CurrentDate>2015-04-30T15:14:45.2669829-04:00</CurrentDate>
+    <ExerciseSets>2</ExerciseSets>
+    <Weights>50</Weights>
+    <Reps>50</Reps>
+    <EmailAddress>quayne@gmail.com</EmailAddress>
+    <BodyPartID>0</BodyPartID>
+    <ExerciseTypeID>0</ExerciseTypeID>
+    <ExerciseName>Tricep</ExerciseName>
+    <BodyParts>Arms</BodyParts>
+  </Exercise>
+</ArrayOfExercise>

@@ -118,7 +118,10 @@ namespace WorkoutLog.Web
             Response.Redirect("~/admin/index.aspx"); //redirect to index.aspx page
         }
 
-              
+        /// <summary>
+        /// Validate ExerciseID property.
+        /// Expecting Integer.
+        /// </summary>      
         public new int ID
         {
             get

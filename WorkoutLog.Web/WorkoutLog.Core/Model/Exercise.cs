@@ -14,6 +14,7 @@ namespace WorkoutLog.Core.Model
         private string _email;
         private DateTime _currentDate = DateTime.Now;
 
+
         public int ID
         {
             get;

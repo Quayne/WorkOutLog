@@ -41,7 +41,7 @@ namespace WorkoutLog.Web
         /// Get the selected ID and pass it as an argument to the ExerciseSQLProvider to delete the selected record.
         /// </summary>
         /// <param name="sender"></param>
-        /// <param name="e">ExerciseID</param>
+        /// <param name="e"></param>
         protected void btnDelete_Command(object sender, CommandEventArgs e)
         {
             //TODO: Remove exercise from XML

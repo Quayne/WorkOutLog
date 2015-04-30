@@ -15,9 +15,15 @@ namespace WorkoutLog.Data
         private List<Exercise> _exerciseList;
         private readonly string _xmlFilePath;
 
+        /// <summary>
+        /// Initialize the XML File Path.
+        /// Check if the file exist.
+        /// Instantiate a new exercise list if the file path does not exist; otherwise, read the entire file then store it in the exercise list.
+        /// </summary>
+        /// <param name="xmlFilePath"></param>
         public ExerciseXMLProvider(string xmlFilePath)
         {
-            this._xmlFilePath = xmlFilePath;
+            _xmlFilePath = xmlFilePath;
 
             if (!File.Exists(_xmlFilePath))
             {
@@ -30,11 +36,19 @@ namespace WorkoutLog.Data
             }
         }
 
+        /// <summary>
+        /// Get all exercise record.
+        /// </summary>
+        /// <returns>ExerciseList</returns>
         public List<Exercise> GetAll()
         {
             return ExerciseList;
         }
 
+        /// <summary>
+        /// If exercise list equal null, then instantiate new exercise list.
+        /// Returns exercise list.
+        /// </summary>
         private List<Exercise> ExerciseList
         {
             get

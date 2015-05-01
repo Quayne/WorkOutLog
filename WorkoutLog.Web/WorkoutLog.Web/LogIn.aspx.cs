@@ -14,6 +14,9 @@ namespace WorkoutLog.Web
 
         }
 
-       
+       protected void SubmitCredentials(object sender, EventArgs e)
+       {
+           
+       }
     }
 }

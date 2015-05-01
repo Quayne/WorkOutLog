@@ -4,32 +4,30 @@
     <div class="container top-edge" >
 
       <div class="form-group">
-        <label class="col-sm-2 control-label">Email</label>
+          <asp:Label Text="Email" ID="emailLabel" AssociatedControlId="emailTextBox" CssClass="col-sm-2 control-label" runat="server"/>
         <div class="col-sm-4">
-          <input type="email" class="form-control" name="login_email" id="login_email" placeholder="email@something.com" />
+          <asp:TextBox type="email" CssClass="form-control" name="login_email" ID="emailTextBox" placeholder="email@something.com"  runat="server"/>
         </div>
       </div>
 
       <div class="form-group">
-        <label class="col-sm-2 control-label">Password</label>
+          <asp:Label Text="Password" ID="passwordLabel" AssociatedControlID="passwordTextBox" CssClass="col-sm-2 control-label" runat="server"/>
         <div class="col-sm-4">
-          <input type="password" class="form-control" name="login_password" id="login-password" placeholder="Password" />
+          <asp:TextBox type="password" CssClass="form-control" name="login_password" ID="passwordTextBox" placeholder="Password"  runat="server"/>
         </div> 
       </div>
 
       <div class="form-group">
         <div class="col-sm-offset-2 col-sm-4">
           <div class="checkbox">
-            <label>
-              <input type="checkbox" /> Remember me
-            </label>
+                <asp:CheckBox Text="Remember Me" runat="server"/>
           </div>
         </div>
       </div>
 
       <div class="form-group">
         <div class="col-sm-offset-2 col-sm-4">
-          <button type="submit" class="btn btn-default" onclick="SubmitCredentials">Log in</button>
+            <asp:Button type="submit" Text="Log In" CssClass="btn btn-primary" OnClick="SubmitCredentials" runat="server" />
         </div>
       </div>
 

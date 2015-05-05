@@ -5,13 +5,6 @@ C:\Users\Quayne\OneDrive\Projects\WorkoutLog.Web\WorkoutLog.Data\bin\Debug\Worko
 C:\Users\Quayne\OneDrive\Projects\WorkoutLog.Web\WorkoutLog.Data\obj\Debug\WorkoutLog.Data.csprojResolveAssemblyReference.cache
 C:\Users\Quayne\OneDrive\Projects\WorkoutLog.Web\WorkoutLog.Data\obj\Debug\WorkoutLog.Data.dll
 C:\Users\Quayne\OneDrive\Projects\WorkoutLog.Web\WorkoutLog.Data\obj\Debug\WorkoutLog.Data.pdb
-C:\Users\QuayneBrown\Source\Repos\WorkOutLog\WorkoutLog.Web\WorkoutLog.Data\bin\Debug\WorkoutLog.Data.dll
-C:\Users\QuayneBrown\Source\Repos\WorkOutLog\WorkoutLog.Web\WorkoutLog.Data\bin\Debug\WorkoutLog.Data.pdb
-C:\Users\QuayneBrown\Source\Repos\WorkOutLog\WorkoutLog.Web\WorkoutLog.Data\bin\Debug\WorkoutLog.Core.dll
-C:\Users\QuayneBrown\Source\Repos\WorkOutLog\WorkoutLog.Web\WorkoutLog.Data\bin\Debug\WorkoutLog.Core.pdb
-C:\Users\QuayneBrown\Source\Repos\WorkOutLog\WorkoutLog.Web\WorkoutLog.Data\obj\Debug\WorkoutLog.Data.csprojResolveAssemblyReference.cache
-C:\Users\QuayneBrown\Source\Repos\WorkOutLog\WorkoutLog.Web\WorkoutLog.Data\obj\Debug\WorkoutLog.Data.dll
-C:\Users\QuayneBrown\Source\Repos\WorkOutLog\WorkoutLog.Web\WorkoutLog.Data\obj\Debug\WorkoutLog.Data.pdb
 E:\DotNetProjects\GitHub\WorkOutLog\WorkoutLog.Web\WorkoutLog.Data\bin\Debug\WorkoutLog.Data.dll
 E:\DotNetProjects\GitHub\WorkOutLog\WorkoutLog.Web\WorkoutLog.Data\bin\Debug\WorkoutLog.Data.pdb
 E:\DotNetProjects\GitHub\WorkOutLog\WorkoutLog.Web\WorkoutLog.Data\bin\Debug\WorkoutLog.Core.dll
@@ -19,3 +12,10 @@ E:\DotNetProjects\GitHub\WorkOutLog\WorkoutLog.Web\WorkoutLog.Data\bin\Debug\Wor
 E:\DotNetProjects\GitHub\WorkOutLog\WorkoutLog.Web\WorkoutLog.Data\obj\Debug\WorkoutLog.Data.csprojResolveAssemblyReference.cache
 E:\DotNetProjects\GitHub\WorkOutLog\WorkoutLog.Web\WorkoutLog.Data\obj\Debug\WorkoutLog.Data.dll
 E:\DotNetProjects\GitHub\WorkOutLog\WorkoutLog.Web\WorkoutLog.Data\obj\Debug\WorkoutLog.Data.pdb
+C:\Users\QuayneBrown\Source\Repos\WorkOutLog\WorkoutLog.Web\WorkoutLog.Data\bin\Debug\WorkoutLog.Data.dll
+C:\Users\QuayneBrown\Source\Repos\WorkOutLog\WorkoutLog.Web\WorkoutLog.Data\bin\Debug\WorkoutLog.Data.pdb
+C:\Users\QuayneBrown\Source\Repos\WorkOutLog\WorkoutLog.Web\WorkoutLog.Data\bin\Debug\WorkoutLog.Core.dll
+C:\Users\QuayneBrown\Source\Repos\WorkOutLog\WorkoutLog.Web\WorkoutLog.Data\bin\Debug\WorkoutLog.Core.pdb
+C:\Users\QuayneBrown\Source\Repos\WorkOutLog\WorkoutLog.Web\WorkoutLog.Data\obj\Debug\WorkoutLog.Data.csprojResolveAssemblyReference.cache
+C:\Users\QuayneBrown\Source\Repos\WorkOutLog\WorkoutLog.Web\WorkoutLog.Data\obj\Debug\WorkoutLog.Data.dll
+C:\Users\QuayneBrown\Source\Repos\WorkOutLog\WorkoutLog.Web\WorkoutLog.Data\obj\Debug\WorkoutLog.Data.pdb

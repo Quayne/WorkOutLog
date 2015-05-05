@@ -48,6 +48,7 @@
     <Compile Include="ExerciseSQLProvider.cs" />
     <Compile Include="ExerciseTypeSQLProvider.cs" />
     <Compile Include="ExerciseXMLProvider.cs" />
+    <Compile Include="MemberProvider.cs" />
     <Compile Include="PersonSQLProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -9,7 +9,7 @@ using WorkoutLog.Core.Model;
 
 namespace WorkoutLog.Data
 {
-    class PersonSQLProvider : BaseSQLProvider<IPersons>
+    public class PersonSQLProvider : BaseSQLProvider<IPersons>
     {
         public PersonSQLProvider(string connString) : base(connString) { }
 
@@ -19,7 +19,7 @@ namespace WorkoutLog.Data
             using (var conn = new SqlConnection(_connString))
             {
                 conn.Open();
-                const string selectQuery = "SELECT * FROM Person WHERE EmailAddress = @Email";
+                const string selectQuery = "SELECT * FROM Persons WHERE EmailAddress = @Email";
 
                 SqlCommand command = new SqlCommand(selectQuery, conn);
                 //command.Parameters.Add("@Email", email);
@@ -37,6 +37,38 @@ namespace WorkoutLog.Data
                 }
             }
             return person;
+        }
+
+        public bool ValidatePerson(string name, string password)
+        {
+            var isUser = false;
+
+            using (var conn = new SqlConnection(_connString))
+            {
+                conn.Open();
+                const string selectQuery = "SELECT * FROM Persons WHERE UserName LIKE @username AND UserPassword LIKE @password";
+
+                SqlCommand command = new SqlCommand(selectQuery, conn);
+                command.Parameters.AddWithValue("@username", name);
+                command.Parameters.AddWithValue("@password", password);
+
+
+                using (var dr = command.ExecuteReader())
+                {
+                    
+                    if (dr.Read())
+                    {
+                        var userName = dr["UserName"].ToString();
+                        var userpassword = dr["UserPassword"].ToString();
+
+                        if (userName.ToLower() == name.ToLower() && password.Equals(password))
+                        {
+                            isUser = true;
+                        }
+                    }
+                }               
+            }
+            return isUser;
         }
 
 

@@ -20,14 +20,14 @@ namespace WorkoutLog.Web
         {
             base.OnPreRender(e);
 
-            ////reference to the ExerciseSQLProvider class
-            //var provider = new ExerciseSQLProvider(System.Configuration.ConfigurationManager.ConnectionStrings["ExerciseConnString"].ConnectionString);
+            //reference to the ExerciseSQLProvider class
+            var provider = new ExerciseSQLProvider(System.Configuration.ConfigurationManager.ConnectionStrings["ExerciseConnString"].ConnectionString);
 
-            ////get all the records from the database
-            //var items = provider.GetAll();
-
-            var provider = new ExerciseXMLProvider(Server.MapPath(Variables.ExerciseXmlFilePath));
+            //get all the records from the database
             var items = provider.GetAll();
+
+            //var provider = new ExerciseXMLProvider(Server.MapPath(Variables.ExerciseXmlFilePath));
+            //var items = provider.GetAll();
 
             //Sets the data source that provides data for populating the repeater
             Repeater1.DataSource = items;
@@ -52,9 +52,9 @@ namespace WorkoutLog.Web
             int.TryParse(e.CommandArgument as string, out tempId);
 
             //reference to the ExerciseSQLProvider class
-            //var provider = new ExerciseSQLProvider(System.Configuration.ConfigurationManager.ConnectionStrings["ExerciseConnString"].ConnectionString);
+            var provider = new ExerciseSQLProvider(System.Configuration.ConfigurationManager.ConnectionStrings["ExerciseConnString"].ConnectionString);
 
-            var provider = new ExerciseXMLProvider(Server.MapPath(Variables.ExerciseXmlFilePath));                 
+            //var provider = new ExerciseXMLProvider(Server.MapPath(Variables.ExerciseXmlFilePath));                 
 
             //pass the Exercise ID that should be deleted
             provider.Delete(tempId);

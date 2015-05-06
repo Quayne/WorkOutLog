@@ -13,15 +13,15 @@
     <BodyParts>Arms</BodyParts>
   </Exercise>
   <Exercise>
-    <ID>2</ID>
-    <CurrentDate>2015-04-30T15:14:45.2669829-04:00</CurrentDate>
-    <ExerciseSets>2</ExerciseSets>
-    <Weights>50</Weights>
-    <Reps>50</Reps>
+    <ID>3</ID>
+    <CurrentDate>2015-05-06T10:43:33.0358734-04:00</CurrentDate>
+    <ExerciseSets>12</ExerciseSets>
+    <Weights>30</Weights>
+    <Reps>100</Reps>
     <EmailAddress>quayne@gmail.com</EmailAddress>
     <BodyPartID>0</BodyPartID>
     <ExerciseTypeID>0</ExerciseTypeID>
-    <ExerciseName>Tricep</ExerciseName>
-    <BodyParts>Arms</BodyParts>
+    <ExerciseName>Bicep</ExerciseName>
+    <BodyParts>Legs</BodyParts>
   </Exercise>
 </ArrayOfExercise>

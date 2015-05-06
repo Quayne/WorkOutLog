@@ -21,7 +21,7 @@ namespace WorkoutLog.Data
         public IExercise GetById(int Id)
         {
             var exercise = new Exercise();
-            string selectQuery = "SELECT * FROM Exercise WHERE ExerciseID = @ID";
+            string selectQuery = "SELECT * FROM Exercise WHERE ID = @ID";
 
             using (var conn = new SqlConnection(_connString)) //Set connection string
             {
@@ -45,7 +45,7 @@ namespace WorkoutLog.Data
                         
                         exercise.EmailAddress = dr["EmailAddress"].ToString();
 
-                        if (int.TryParse(dr["ExerciseID"].ToString(), out tempInt))
+                        if (int.TryParse(dr["ID"].ToString(), out tempInt))
                         {
                             exercise.ID = tempInt;
                         }
@@ -82,8 +82,8 @@ namespace WorkoutLog.Data
         /// <param name="exercise"></param>
         /// <returns>true if the number of rows affected is greater than 0, false otherwise</returns>
         public override bool Insert(IExercise exercise)
-        {            
-            const string cmd = "INSERT INTO Exercise VALUES (@CurrentDate,@ExerciseSets,@Reps,@Weights,@BodyPartID,@ExerciseTypeID,@EmailAddress);";
+        {
+            const string cmd = "INSERT INTO Exercise VALUES (@CurrentDate,@ExerciseSets,@Reps,@Weights,@EmailAddress,@BodyPartID,@ExerciseTypeID);";
             try
             {
                 using (var conn = new SqlConnection(_connString))
@@ -94,9 +94,9 @@ namespace WorkoutLog.Data
                     sql.Parameters.Add(new SqlParameter("@ExerciseSets", exercise.ExerciseSets));
                     sql.Parameters.Add(new SqlParameter("@Reps", exercise.Reps));
                     sql.Parameters.Add(new SqlParameter("@Weights", exercise.Weights));
+                    sql.Parameters.Add(new SqlParameter("@EmailAddress", "quayne@gmail.com"));
                     sql.Parameters.Add(new SqlParameter("@BodyPartID", exercise.BodyPartID));
-                    sql.Parameters.Add(new SqlParameter("@ExerciseTypeID", exercise.ExerciseTypeID));
-                    sql.Parameters.Add(new SqlParameter("@EmailAddress", "quayne@gmail.com"));                 
+                    sql.Parameters.Add(new SqlParameter("@ExerciseTypeID", exercise.ExerciseTypeID));                                     
 
                     //return true if the number of rows affected is greater than 0
                     return sql.ExecuteNonQuery() > 0;
@@ -120,7 +120,7 @@ namespace WorkoutLog.Data
             var isUpdated = false;
             using (var conn = new SqlConnection(_connString))
             {
-                string selectQuery = "UPDATE Exercise SET CurrentDate =@currentDate, ExerciseSets =@sets, Reps =@reps, Weights =@weights, BodyPartID =@bodyPartID, ExerciseTypeID =@exerciseTypeID, EmailAddress=@emailAddress WHERE ExerciseID = @ID";
+                string selectQuery = "UPDATE Exercise SET CurrentDate =@currentDate, ExerciseSets =@sets, Reps =@reps, Weights =@weights, BodyPartID =@bodyPartID, ExerciseTypeID =@exerciseTypeID, EmailAddress=@emailAddress WHERE ID = @ID";
 
                 conn.Open();               
 
@@ -150,7 +150,7 @@ namespace WorkoutLog.Data
         {
             using (var conn = new SqlConnection(_connString))
             {
-                string cmd = "DELETE FROM Exercise WHERE ExerciseID = @ID";
+                string cmd = "DELETE FROM Exercise WHERE ID = @ID";
 
                 conn.Open();
 
@@ -175,9 +175,12 @@ namespace WorkoutLog.Data
             using (var conn = new SqlConnection(_connString))
             {
                 conn.Open();
-                var selectQuery = "SELECT [ExerciseID],[ExerciseSets],[Reps],[Weights],[BodyPartName],[ExerciseName],[EmailAddress],[CurrentDate] FROM Exercise JOIN BodyParts ON Exercise.BodyPartID = BodyParts.BodyPartsID JOIN ExerciseType ON Exercise.ExerciseTypeID = ExerciseType.ExerciseTypeID ORDER BY CurrentDate, ExerciseSets ASC";
+                var selectQuery = "SELECT [Exercise].ID,[ExerciseSets],[Reps],[Weights],[BodyParts],[ExerciseName],[EmailAddress],[CurrentDate] FROM Exercise JOIN BodyParts ON Exercise.BodyPartID = BodyParts.ID JOIN ExerciseType ON Exercise.ExerciseTypeID = ExerciseType.ID WHERE EmailAddress LIKE @email";
 
                 SqlCommand command = new SqlCommand(selectQuery, conn);
+
+                //TODO: get the email address that is logged in
+                command.Parameters.AddWithValue("@email", "quayne@gmail.com");
 
                 using (var dr = command.ExecuteReader())
                 {
@@ -188,7 +191,7 @@ namespace WorkoutLog.Data
                         var exercise = new Exercise();
                         exercise.EmailAddress = dr["EmailAddress"].ToString();
 
-                        if (int.TryParse(dr["ExerciseID"].ToString(), out tempInt))
+                        if (int.TryParse(dr["ID"].ToString(), out tempInt))
                         {
                             exercise.ID = tempInt;
                         }
@@ -205,7 +208,7 @@ namespace WorkoutLog.Data
                             exercise.Weights = tempFloat;
                         }
                         exercise.ExerciseName = dr["ExerciseName"].ToString();
-                        exercise.BodyParts = dr["BodyPartName"].ToString();
+                        exercise.BodyParts = dr["BodyParts"].ToString();
 
                         toReturn.Add(exercise);
                     }

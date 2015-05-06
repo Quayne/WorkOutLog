@@ -17,25 +17,25 @@ namespace WorkoutLog.Web
         protected override void OnInit(EventArgs e)
         {
             base.OnInit(e);
-            //LoadBodyPartsList(); //call LoadBodyPartsList method
-            //LoadExerciseTypeList(); //call LoadExerciseTypeList method
+            LoadBodyPartsList(); //call LoadBodyPartsList method
+            LoadExerciseTypeList(); //call LoadExerciseTypeList method
 
-            // if not post back, get excercise by id
-            //if (!IsPostBack && ID > 0)
-            //{
-            //    //Create instance of ExerciseSQLProvider
-            //    var provider = new ExerciseSQLProvider(System.Configuration.ConfigurationManager.ConnectionStrings["ExerciseConnString"].ConnectionString);
+             //if not post back, get excercise by id
+            if (!IsPostBack && ID > 0)
+            {
+                //Create instance of ExerciseSQLProvider
+                var provider = new ExerciseSQLProvider(System.Configuration.ConfigurationManager.ConnectionStrings["ExerciseConnString"].ConnectionString);
 
-            //    //Get record by ID
-            //    var item = provider.GetById(ID);
+                //Get record by ID
+                var item = provider.GetById(ID);
 
-            //    // set IExercise Properties
-            //    BodyPartID = item.BodyPartID;
-            //    ExerciseTypeID = item.ExerciseTypeID;
-            //    ExerciseSets = item.ExerciseSets;
-            //    Reps = item.Reps;
-            //    Weights = item.Weights;
-            //}
+                // set IExercise Properties
+                BodyPartID = item.BodyPartID;
+                ExerciseTypeID = item.ExerciseTypeID;
+                ExerciseSets = item.ExerciseSets;
+                Reps = item.Reps;
+                Weights = item.Weights;
+            }
         }
 
         /// <summary>
@@ -81,21 +81,21 @@ namespace WorkoutLog.Web
         /// <param name="e"></param>
         protected void btnSave_Click(object sender, EventArgs e)
         {
-            SaveXML();
+            //SaveXML();
 
             //Create instance of ExerciseSQLProvider
-            //var provider = new ExerciseSQLProvider(System.Configuration.ConfigurationManager.ConnectionStrings["ExerciseConnString"].ConnectionString);
+            var provider = new ExerciseSQLProvider(System.Configuration.ConfigurationManager.ConnectionStrings["ExerciseConnString"].ConnectionString);
 
-            ////if query string have ID, do update instead of insert
-            //if (Request.QueryString["id"] != null)
-            //{
-            //    if(provider.Update(this))
-            //        Response.Redirect("~/admin/index.aspx"); //redirect to index.aspx page
-            //}
-            //else if (provider.Insert(this))
-            //{
-            //    Response.Redirect("~/admin/index.aspx"); //redirect to index.aspx page
-            //}              
+            //if query string have ID, do update instead of insert
+            if (Request.QueryString["id"] != null)
+            {
+                if(provider.Update(this))
+                    Response.Redirect("~/admin/index.aspx"); //redirect to index.aspx page
+            }
+            else if (provider.Insert(this))
+            {
+                Response.Redirect("~/admin/index.aspx"); //redirect to index.aspx page
+            }              
         }
 
         /// <summary>

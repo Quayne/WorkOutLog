@@ -9,8 +9,8 @@ using WorkoutLog.Data;
 
 namespace WorkoutLog.Web
 {
-    public partial class LogIn : System.Web.UI.Page
-    {
+    public partial class Login : System.Web.UI.Page
+    {           
         protected override void OnInit(EventArgs e)
         {
             base.OnInit(e);
@@ -18,16 +18,18 @@ namespace WorkoutLog.Web
         }
 
         void lgSignIn_Authenticate(object sender, AuthenticateEventArgs e)
-        {            
+        {
+            //reference to the ExerciseSQLProvider class
+            var provider = new PersonSQLProvider(System.Configuration.ConfigurationManager.ConnectionStrings["ExerciseConnString"].ConnectionString);
+     
             //TODO: call member provider
-            var provider = new MemberProvider(Server.MapPath(Variables.MembersXmlFilePath));
-            bool isSuccess = provider.ValidateUser(lgSignIn.UserName, lgSignIn.Password);
+            //var provider = new MemberProvider(Server.MapPath(Variables.MembersXmlFilePath));
+
+
+            bool isSuccess = provider.ValidatePerson(lgSignIn.UserName, lgSignIn.Password);
+
+            //bool isSuccess = provider.ValidateUser(lgSignIn.UserName, lgSignIn.Password);
             e.Authenticated = isSuccess;
         }
-
-       protected void SubmitCredentials(object sender, EventArgs e)
-       {
-           
-       }
     }
 }

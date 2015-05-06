@@ -13,6 +13,7 @@ namespace WorkoutLog.Data
     {
         private List<Persons> _memberList;
         private readonly string _xmlFilePath;
+        private static string _userName;
 
         public MemberProvider(string xmlFilePath)
         {
@@ -33,17 +34,25 @@ namespace WorkoutLog.Data
 
         public bool ValidateUser(string userName, string password)
         {
-            bool toReturn = false;
-
             for (int i = 0; i < MemberList.Count; i++)
             {
                 if (MemberList[i].UserName.Equals(userName) && MemberList[i].UserPassword.Equals(password))
                 {
+                   // SetUsername(MemberList[i].UserName);
                     return true;
                 }                        
             }
+            return false;
+        }
 
-            return toReturn;
+        private void SetUsername(string name)
+        {
+            _userName = name;
+        }
+
+        public string GetUsername()
+        {
+            return _userName;
         }
 
         private List<Persons> MemberList

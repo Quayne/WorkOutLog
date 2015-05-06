@@ -19,7 +19,7 @@ namespace WorkoutLog.Data
             using (var conn = new SqlConnection(_connString))
             {
                 conn.Open();
-                const string selectQuery = "SELECT * FROM ExerciseType WHERE ExerciseTypeID = @ID";
+                const string selectQuery = "SELECT * FROM ExerciseType WHERE ID = @ID";
 
                 SqlCommand command = new SqlCommand(selectQuery, conn);
                 command.Parameters.AddWithValue("@ID", Id);
@@ -33,7 +33,7 @@ namespace WorkoutLog.Data
                         exerciseType.ExerciseName = dr["ExerciseName"].ToString();
 
                         int tempInt;
-                        if (int.TryParse(dr["ExerciseTypeID"].ToString(), out tempInt))
+                        if (int.TryParse(dr["ID"].ToString(), out tempInt))
                         {
                             exerciseType.ID = tempInt;
                         }
@@ -77,7 +77,7 @@ namespace WorkoutLog.Data
                         var exerciseType = new ExerciseType();
                         exerciseType.ExerciseName = dr["ExerciseName"].ToString();
 
-                        if (int.TryParse(dr["ExerciseTypeID"].ToString(), out tempInt))
+                        if (int.TryParse(dr["ID"].ToString(), out tempInt))
                         {
                             exerciseType.ID = tempInt;
                         }

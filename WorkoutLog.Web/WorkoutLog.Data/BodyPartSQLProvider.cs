@@ -25,7 +25,7 @@ namespace WorkoutLog.Data
             using (var conn = new SqlConnection(_connString))
             {
                 conn.Open();
-                const string selectQuery = "SELECT * FROM BodyParts WHERE BodyPartsID = @ID";
+                const string selectQuery = "SELECT * FROM BodyParts WHERE ID = @ID";
 
                 SqlCommand command = new SqlCommand(selectQuery, conn);
 
@@ -38,7 +38,7 @@ namespace WorkoutLog.Data
                     {
                         dr.Read();
 
-                        bodyParts.BodyPartName = dr["BodyPartName"].ToString();
+                        bodyParts.BodyPartName = dr["BodyParts"].ToString();
 
                         bodyParts.ID = validateInteger(dr["BodyPartsID"].ToString());
                     }                  
@@ -79,9 +79,9 @@ namespace WorkoutLog.Data
                     while (dr.Read())
                     {                                               
                         var bodyParts = new BodyParts();
-                        bodyParts.BodyPartName = dr["BodyPartName"].ToString();
+                        bodyParts.BodyPartName = dr["BodyParts"].ToString();
 
-                        bodyParts.ID = validateInteger(dr["BodyPartsID"].ToString());
+                        bodyParts.ID = validateInteger(dr["ID"].ToString());
                                                 
                         toReturn.Add(bodyParts);
                     }

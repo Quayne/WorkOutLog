@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" MasterPageFile="../WorkoutLog.Master" Title="Content Page 1" AutoEventWireup="true" CodeBehind="WorkoutLog.aspx.cs" Inherits="WorkoutLog.Web.Workout1" %>
 
 
-<asp:Content ID="Content1" ContentPlaceHolderID="Main" runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="Header" runat="Server">
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="Content" runat="Server">
@@ -28,8 +28,8 @@
             <label class="col-sm-2 control-label">Body Part</label>
             <div class="col-sm-4">
                 <asp:DropDownList ID="ddlBodyParts" runat="server" CssClass="form-control" DataTextField="BodyPartName" DataValueField="ID">
-                    <asp:ListItem Text="Arms" Value="Arms"></asp:ListItem>
-                    <asp:ListItem Text="Legs" Value="Legs"></asp:ListItem>
+                    <%--<asp:ListItem Text="Arms" Value="Arms"></asp:ListItem>
+                    <asp:ListItem Text="Legs" Value="Legs"></asp:ListItem>--%>
                 </asp:DropDownList>
                 
             </div>
@@ -39,8 +39,8 @@
             <label class="col-sm-2 control-label">Exercise Type</label>
             <div class="col-sm-4">                
                 <asp:DropDownList ID="ddlExerciseName" runat="server" CssClass="form-control" DataTextField="ExerciseName" DataValueField="ID">
-                    <asp:ListItem Text="Tricep" Value="Tricep"></asp:ListItem>
-                    <asp:ListItem Text="Bicep" Value="Bicep"></asp:ListItem>
+                    <%--<asp:ListItem Text="Tricep" Value="Tricep"></asp:ListItem>
+                    <asp:ListItem Text="Bicep" Value="Bicep"></asp:ListItem>--%>
                 </asp:DropDownList>
             </div>
         </div>

@@ -34,7 +34,7 @@ CREATE TABLE ExerciseType (
 ) ;
 
 
--- Create Sales table
+-- Create BodyParts table
 CREATE TABLE BodyParts ( 
 	ID INT IDENTITY NOT NULL , 
 	BodyParts NVARCHAR(200) NOT NULL , 

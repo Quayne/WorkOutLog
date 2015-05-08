@@ -16,6 +16,7 @@ namespace WorkoutLog.Core
                 return ConfigurationManager.AppSettings["ExerciseXmlFilePath"];
             }
         }
+        
 
         public static string MembersXmlFilePath
         {

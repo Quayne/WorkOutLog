@@ -23,8 +23,10 @@ namespace WorkoutLog.Web
             //reference to the ExerciseSQLProvider class
             var provider = new ExerciseSQLProvider(System.Configuration.ConfigurationManager.ConnectionStrings["ExerciseConnString"].ConnectionString);
 
+            var loginUser = HttpContext.Current.User.Identity.Name;
+
             //get all the records from the database
-            var items = provider.GetAll();
+            var items = provider.GetAllByUser(loginUser);
 
             //var provider = new ExerciseXMLProvider(Server.MapPath(Variables.ExerciseXmlFilePath));
             //var items = provider.GetAll();

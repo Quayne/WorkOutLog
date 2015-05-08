@@ -1,5 +1,9 @@
 ﻿<%@ Page Language="C#" MasterPageFile="WorkoutLog.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="WorkoutLog.Web.Login" %>
 
+<asp:Content ID="Registration" ContentPlaceHolderID="RegistrationLink" runat="server">
+    <a href="/Registration.aspx">Register</a>
+</asp:Content>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="Content" runat="Server">
     <div class="container top-edge">
 

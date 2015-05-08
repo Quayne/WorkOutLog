@@ -15,14 +15,14 @@ namespace WorkoutLog.Data
 
         public IPersons GetById(string email)
         {
-            var person = new Persons();
+            Persons person = null;
             using (var conn = new SqlConnection(_connString))
             {
                 conn.Open();
                 const string selectQuery = "SELECT * FROM Persons WHERE EmailAddress = @Email";
 
                 SqlCommand command = new SqlCommand(selectQuery, conn);
-                //command.Parameters.Add("@Email", email);
+                command.Parameters.AddWithValue("@Email", email);
                 //command.ExecuteNonQuery();
 
                 using (var dr = command.ExecuteReader())
@@ -30,6 +30,7 @@ namespace WorkoutLog.Data
                     if (dr.HasRows)
                     {
                         dr.Read();
+                        person = new Persons();
                         person.EmailAddress = dr["EmailAddress"].ToString();
                         person.UserName = dr["UserName"].ToString();
                         person.UserPassword = dr["UserPassword"].ToString();
@@ -39,17 +40,17 @@ namespace WorkoutLog.Data
             return person;
         }
 
-        public bool ValidatePerson(string name, string password)
+        public bool ValidatePerson(string email, string password)
         {
             var isUser = false;
 
             using (var conn = new SqlConnection(_connString))
             {
                 conn.Open();
-                const string selectQuery = "SELECT * FROM Persons WHERE UserName LIKE @username AND UserPassword LIKE @password";
+                const string selectQuery = "SELECT * FROM Persons WHERE EmailAddress LIKE @email AND UserPassword LIKE @password";
 
                 SqlCommand command = new SqlCommand(selectQuery, conn);
-                command.Parameters.AddWithValue("@username", name);
+                command.Parameters.AddWithValue("@email", email);
                 command.Parameters.AddWithValue("@password", password);
 
 
@@ -58,10 +59,10 @@ namespace WorkoutLog.Data
                     
                     if (dr.Read())
                     {
-                        var userName = dr["UserName"].ToString();
+                        var userEmail = dr["EmailAddress"].ToString();
                         var userpassword = dr["UserPassword"].ToString();
 
-                        if (userName.ToLower() == name.ToLower() && password.Equals(password))
+                        if (userEmail.ToLower() == email.ToLower() && userpassword.Equals(password))
                         {
                             isUser = true;
                         }
@@ -72,9 +73,29 @@ namespace WorkoutLog.Data
         }
 
 
-        public override bool Insert(IPersons item)
+        public override bool Insert(IPersons person)
         {
-            throw new NotImplementedException();
+            const string cmd = "INSERT INTO Persons VALUES (@email,@username,@password);";
+            try
+            {
+                using (var conn = new SqlConnection(_connString))
+                {
+                    conn.Open();
+                    SqlCommand sql = new SqlCommand(cmd, conn);
+                    sql.Parameters.Add(new SqlParameter("@email", person.EmailAddress));
+                    sql.Parameters.Add(new SqlParameter("@password", person.UserPassword));
+                    sql.Parameters.Add(new SqlParameter("@username", person.UserName));                
+
+                    //return true if the number of rows affected is greater than 0
+                    return sql.ExecuteNonQuery() > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                //log the exception
+                //return false
+                throw ex;
+            }  
         }
 
         public override bool Delete(int ID)

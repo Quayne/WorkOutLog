@@ -49,12 +49,13 @@
                     <div id="navbar" class="collapse navbar-collapse navbar-right">
                         <ul class="nav navbar-nav">
                             <li><%--<a href="/LogIn.aspx">Log In</a>--%><asp:LoginStatus ID="LoginStatus1" runat="server" /></li>
-                            <li><%--<a href="/Registration.aspx">Register</a>--%></li>
+                            <li><asp:ContentPlaceHolder ID="RegistrationLink" runat="server"></asp:ContentPlaceHolder></li>
                         </ul>
                     </div>
                     <!--nav-collapse -->
                 </div>
             </nav>
+            
             <asp:ContentPlaceHolder ID="Header" runat="server">
             </asp:ContentPlaceHolder>
 

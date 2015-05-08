@@ -9,5 +9,6 @@ E:\DotNetProjects\GitHub\WorkOutLog\WorkoutLog.Web\WorkoutLog.Core\obj\Debug\Wor
 E:\DotNetProjects\GitHub\WorkOutLog\WorkoutLog.Web\WorkoutLog.Core\obj\Debug\WorkoutLog.Core.pdb
 C:\Users\QuayneBrown\Source\Repos\WorkOutLog\WorkoutLog.Web\WorkoutLog.Core\bin\Debug\WorkoutLog.Core.dll
 C:\Users\QuayneBrown\Source\Repos\WorkOutLog\WorkoutLog.Web\WorkoutLog.Core\bin\Debug\WorkoutLog.Core.pdb
+C:\Users\QuayneBrown\Source\Repos\WorkOutLog\WorkoutLog.Web\WorkoutLog.Core\obj\Debug\WorkoutLog.Core.csprojResolveAssemblyReference.cache
 C:\Users\QuayneBrown\Source\Repos\WorkOutLog\WorkoutLog.Web\WorkoutLog.Core\obj\Debug\WorkoutLog.Core.dll
 C:\Users\QuayneBrown\Source\Repos\WorkOutLog\WorkoutLog.Web\WorkoutLog.Core\obj\Debug\WorkoutLog.Core.pdb

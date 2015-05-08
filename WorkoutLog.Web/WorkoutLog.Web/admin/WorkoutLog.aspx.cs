@@ -85,16 +85,16 @@ namespace WorkoutLog.Web
 
             //Create instance of ExerciseSQLProvider
             var provider = new ExerciseSQLProvider(System.Configuration.ConfigurationManager.ConnectionStrings["ExerciseConnString"].ConnectionString);
-
+            var loginUser = HttpContext.Current.User.Identity.Name;
             //if query string have ID, do update instead of insert
             if (Request.QueryString["id"] != null)
             {
                 if(provider.Update(this))
-                    Response.Redirect("~/admin/index.aspx"); //redirect to index.aspx page
+                    Response.Redirect("~/admin/index.aspx"); 
             }
             else if (provider.Insert(this))
             {
-                Response.Redirect("~/admin/index.aspx"); //redirect to index.aspx page
+                Response.Redirect("~/admin/index.aspx"); 
             }              
         }
 
@@ -115,7 +115,7 @@ namespace WorkoutLog.Web
             {
                 provider.Insert(this);                
             }            
-            Response.Redirect("~/admin/index.aspx"); //redirect to index.aspx page
+            Response.Redirect("~/admin/index.aspx");
         }
 
         /// <summary>
@@ -182,7 +182,8 @@ namespace WorkoutLog.Web
         {
             get
             {
-                return "bigs@gmail.com";
+                var loginUser = HttpContext.Current.User.Identity.Name;
+                return loginUser;
             }
             set
             {

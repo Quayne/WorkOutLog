@@ -94,7 +94,7 @@ namespace WorkoutLog.Data
                     sql.Parameters.Add(new SqlParameter("@ExerciseSets", exercise.ExerciseSets));
                     sql.Parameters.Add(new SqlParameter("@Reps", exercise.Reps));
                     sql.Parameters.Add(new SqlParameter("@Weights", exercise.Weights));
-                    sql.Parameters.Add(new SqlParameter("@EmailAddress", "quayne@gmail.com"));
+                    sql.Parameters.Add(new SqlParameter("@EmailAddress", exercise.EmailAddress));
                     sql.Parameters.Add(new SqlParameter("@BodyPartID", exercise.BodyPartID));
                     sql.Parameters.Add(new SqlParameter("@ExerciseTypeID", exercise.ExerciseTypeID));                                     
 
@@ -175,12 +175,9 @@ namespace WorkoutLog.Data
             using (var conn = new SqlConnection(_connString))
             {
                 conn.Open();
-                var selectQuery = "SELECT [Exercise].ID,[ExerciseSets],[Reps],[Weights],[BodyParts],[ExerciseName],[EmailAddress],[CurrentDate] FROM Exercise JOIN BodyParts ON Exercise.BodyPartID = BodyParts.ID JOIN ExerciseType ON Exercise.ExerciseTypeID = ExerciseType.ID WHERE EmailAddress LIKE @email";
+                var selectQuery = "SELECT [Exercise].ID,[ExerciseSets],[Reps],[Weights],[BodyParts],[ExerciseName],[EmailAddress],[CurrentDate] FROM Exercise JOIN BodyParts ON Exercise.BodyPartID = BodyParts.ID JOIN ExerciseType ON Exercise.ExerciseTypeID = ExerciseType.ID";
 
                 SqlCommand command = new SqlCommand(selectQuery, conn);
-
-                //TODO: get the email address that is logged in
-                command.Parameters.AddWithValue("@email", "quayne@gmail.com");
 
                 using (var dr = command.ExecuteReader())
                 {
@@ -217,6 +214,55 @@ namespace WorkoutLog.Data
             }
             return toReturn;
         }
-        
+
+        public List<IExercise> GetAllByUser(string email)
+        {
+            var toReturn = new List<IExercise>();
+            using (var conn = new SqlConnection(_connString))
+            {
+                conn.Open();
+                var selectQuery = "SELECT [Exercise].ID,[ExerciseSets],[Reps],[Weights],[BodyParts],[ExerciseName],[Exercise].EmailAddress,[CurrentDate] FROM Exercise JOIN BodyParts ON Exercise.BodyPartID = BodyParts.ID JOIN ExerciseType ON Exercise.ExerciseTypeID = ExerciseType.ID JOIN Persons ON Exercise.EmailAddress = Persons.EmailAddress WHERE [Exercise].EmailAddress = @email";
+
+                SqlCommand command = new SqlCommand(selectQuery, conn);
+
+                //TODO: get the email address that is logged in
+                command.Parameters.AddWithValue("@email", email);
+
+                using (var dr = command.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        int tempInt;
+                        float tempFloat;
+                        var exercise = new Exercise();
+                        exercise.EmailAddress = dr["EmailAddress"].ToString();
+
+                        if (int.TryParse(dr["ID"].ToString(), out tempInt))
+                        {
+                            exercise.ID = tempInt;
+                        }
+                        if (int.TryParse(dr["Reps"].ToString(), out tempInt))
+                        {
+                            exercise.Reps = tempInt;
+                        }
+                        if (int.TryParse(dr["ExerciseSets"].ToString(), out tempInt))
+                        {
+                            exercise.ExerciseSets = tempInt;
+                        }
+                        if (float.TryParse(dr["Weights"].ToString(), out tempFloat))
+                        {
+                            exercise.Weights = tempFloat;
+                        }
+                        exercise.ExerciseName = dr["ExerciseName"].ToString();
+                        exercise.BodyParts = dr["BodyParts"].ToString();
+
+                        toReturn.Add(exercise);
+                    }
+                }
+
+            }
+            return toReturn;
+        }
+                
     }
 }

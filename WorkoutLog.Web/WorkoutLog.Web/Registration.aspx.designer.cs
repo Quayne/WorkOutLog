@@ -31,6 +31,15 @@ namespace WorkoutLog.Web {
         protected global::System.Web.UI.WebControls.TextBox usernameTextBox;
         
         /// <summary>
+        /// usernameMsg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label usernameMsg;
+        
+        /// <summary>
         /// emailLabel control.
         /// </summary>
         /// <remarks>
@@ -47,6 +56,15 @@ namespace WorkoutLog.Web {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox emailTextBox;
+        
+        /// <summary>
+        /// emailMsg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label emailMsg;
         
         /// <summary>
         /// passwordLabel control.
@@ -67,6 +85,15 @@ namespace WorkoutLog.Web {
         protected global::System.Web.UI.WebControls.TextBox passwordTextBox;
         
         /// <summary>
+        /// passwordMsg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label passwordMsg;
+        
+        /// <summary>
         /// confirmPasswordLabel control.
         /// </summary>
         /// <remarks>
@@ -83,6 +110,15 @@ namespace WorkoutLog.Web {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox confirmPasswordTextBox;
+        
+        /// <summary>
+        /// confirmPasswordMsg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label confirmPasswordMsg;
         
         /// <summary>
         /// registerButton control.

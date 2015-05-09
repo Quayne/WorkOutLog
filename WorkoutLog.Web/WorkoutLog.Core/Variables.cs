@@ -26,6 +26,22 @@ namespace WorkoutLog.Core
             }
         }
 
+        public static string ExerciseTypeXmlFilePath
+        {
+            get
+            {
+                return ConfigurationManager.AppSettings["ExerciseTypeXmlFilePath"];
+            }
+        }
+
+        public static string BodyPartXmlFilePath
+        {
+            get
+            {
+                return ConfigurationManager.AppSettings["BodyPartXmlFilePath"];
+            }
+        }
+
         public static bool UseXmlDataSource
         {
             get

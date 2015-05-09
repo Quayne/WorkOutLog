@@ -19,16 +19,22 @@ namespace WorkoutLog.Web
 
         void lgSignIn_Authenticate(object sender, AuthenticateEventArgs e)
         {
-            //reference to the ExerciseSQLProvider class
-            var provider = new PersonSQLProvider(System.Configuration.ConfigurationManager.ConnectionStrings["ExerciseConnString"].ConnectionString);
+            bool isSuccess = false;
+
+            if (Variables.UseXmlDataSource)
+            {                
+                var provider = new MemberXMLProvider(Server.MapPath(Variables.MembersXmlFilePath));
+
+                isSuccess = provider.ValidateUser(lgSignIn.UserName, lgSignIn.Password);
+            }
+            else
+            {
+                //reference to the ExerciseSQLProvider class
+                var provider = new PersonSQLProvider(System.Configuration.ConfigurationManager.ConnectionStrings["ExerciseConnString"].ConnectionString);
+
+                isSuccess = provider.ValidatePerson(lgSignIn.UserName, lgSignIn.Password);
+            }     
      
-            //TODO: call member provider
-            //var provider = new MemberProvider(Server.MapPath(Variables.MembersXmlFilePath));
-
-
-            bool isSuccess = provider.ValidatePerson(lgSignIn.UserName, lgSignIn.Password);
-
-            //bool isSuccess = provider.ValidateUser(lgSignIn.UserName, lgSignIn.Password);
             e.Authenticated = isSuccess;
         }
     }

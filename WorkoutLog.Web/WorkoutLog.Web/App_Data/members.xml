@@ -6,8 +6,13 @@
     <UserPassword>123</UserPassword>    
   </Persons>
   <Persons>
-    <EmailAddress>me@gmail.com</EmailAddress>
+    <EmailAddress>quayne@live.com</EmailAddress>
     <UserName>Quayne</UserName>
+    <UserPassword>123</UserPassword>    
+  </Persons>
+  <Persons>
+    <EmailAddress>quayne@hotmail.com</EmailAddress>
+    <UserName>Brown</UserName>
     <UserPassword>123</UserPassword>    
   </Persons>
 </ArrayOfPersons>

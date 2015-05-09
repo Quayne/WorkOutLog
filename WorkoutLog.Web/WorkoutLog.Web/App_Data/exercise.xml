@@ -7,8 +7,8 @@
     <Weights>50</Weights>
     <Reps>100</Reps>
     <EmailAddress>quayne@gmail.com</EmailAddress>
-    <BodyPartID>0</BodyPartID>
-    <ExerciseTypeID>0</ExerciseTypeID>
+    <BodyPartID>1</BodyPartID>
+    <ExerciseTypeID>1</ExerciseTypeID>
     <ExerciseName>Tricep</ExerciseName>
     <BodyParts>Arms</BodyParts>
   </Exercise>
@@ -19,9 +19,69 @@
     <Weights>30</Weights>
     <Reps>100</Reps>
     <EmailAddress>quayne@gmail.com</EmailAddress>
-    <BodyPartID>0</BodyPartID>
-    <ExerciseTypeID>0</ExerciseTypeID>
+    <BodyPartID>2</BodyPartID>
+    <ExerciseTypeID>2</ExerciseTypeID>
     <ExerciseName>Bicep</ExerciseName>
     <BodyParts>Legs</BodyParts>
+  </Exercise>
+  <Exercise>
+    <ID>4</ID>
+    <CurrentDate>2015-05-08T17:54:06.0205574-04:00</CurrentDate>
+    <ExerciseSets>5</ExerciseSets>
+    <Weights>80</Weights>
+    <Reps>50</Reps>
+    <EmailAddress>quayne@live.com</EmailAddress>
+    <BodyPartID>1</BodyPartID>
+    <ExerciseTypeID>1</ExerciseTypeID>
+    <ExerciseName>1</ExerciseName>
+    <BodyParts>1</BodyParts>
+  </Exercise>
+  <Exercise>
+    <ID>5</ID>
+    <CurrentDate>2015-05-08T17:54:42.354862-04:00</CurrentDate>
+    <ExerciseSets>5</ExerciseSets>
+    <Weights>30</Weights>
+    <Reps>50</Reps>
+    <EmailAddress>quayne@live.com</EmailAddress>
+    <BodyPartID>3</BodyPartID>
+    <ExerciseTypeID>4</ExerciseTypeID>
+    <ExerciseName>4</ExerciseName>
+    <BodyParts>3</BodyParts>
+  </Exercise>
+  <Exercise>
+    <ID>6</ID>
+    <CurrentDate>2015-05-08T17:55:46.3330698-04:00</CurrentDate>
+    <ExerciseSets>4</ExerciseSets>
+    <Weights>30</Weights>
+    <Reps>100</Reps>
+    <EmailAddress>quayne@live.com</EmailAddress>
+    <BodyPartID>4</BodyPartID>
+    <ExerciseTypeID>3</ExerciseTypeID>
+    <ExerciseName>3</ExerciseName>
+    <BodyParts>4</BodyParts>
+  </Exercise>
+  <Exercise>
+    <ID>7</ID>
+    <CurrentDate>2015-05-08T17:57:49.0738543-04:00</CurrentDate>
+    <ExerciseSets>5</ExerciseSets>
+    <Weights>100</Weights>
+    <Reps>100</Reps>
+    <EmailAddress>quayne@hotmail.com</EmailAddress>
+    <BodyPartID>1</BodyPartID>
+    <ExerciseTypeID>1</ExerciseTypeID>
+    <ExerciseName>1</ExerciseName>
+    <BodyParts>1</BodyParts>
+  </Exercise>
+  <Exercise>
+    <ID>8</ID>
+    <CurrentDate>2015-05-08T18:57:43.0043249-04:00</CurrentDate>
+    <ExerciseSets>5</ExerciseSets>
+    <Weights>50</Weights>
+    <Reps>50</Reps>
+    <EmailAddress>quayne@gmail.com</EmailAddress>
+    <BodyPartID>3</BodyPartID>
+    <ExerciseTypeID>2</ExerciseTypeID>
+    <ExerciseName>2</ExerciseName>
+    <BodyParts>3</BodyParts>
   </Exercise>
 </ArrayOfExercise>

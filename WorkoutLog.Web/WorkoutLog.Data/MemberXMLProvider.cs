@@ -9,13 +9,12 @@ using WorkoutLog.Core.Model;
 
 namespace WorkoutLog.Data
 {
-    public class MemberProvider 
+    public class MemberXMLProvider 
     {
         private List<Persons> _memberList;
         private readonly string _xmlFilePath;
-        private static string _userName;
 
-        public MemberProvider(string xmlFilePath)
+        public MemberXMLProvider(string xmlFilePath)
         {
             _xmlFilePath = xmlFilePath;
 
@@ -32,27 +31,16 @@ namespace WorkoutLog.Data
         }
 
 
-        public bool ValidateUser(string userName, string password)
+        public bool ValidateUser(string email, string password)
         {
             for (int i = 0; i < MemberList.Count; i++)
             {
-                if (MemberList[i].UserName.Equals(userName) && MemberList[i].UserPassword.Equals(password))
+                if (MemberList[i].EmailAddress.Equals(email) && MemberList[i].UserPassword.Equals(password))
                 {
-                   // SetUsername(MemberList[i].UserName);
                     return true;
                 }                        
             }
             return false;
-        }
-
-        private void SetUsername(string name)
-        {
-            _userName = name;
-        }
-
-        public string GetUsername()
-        {
-            return _userName;
         }
 
         private List<Persons> MemberList

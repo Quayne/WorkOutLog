@@ -44,11 +44,12 @@
   <ItemGroup>
     <Compile Include="BaseSQLProvider.cs" />
     <Compile Include="BodyPartSQLProvider.cs" />
-    <Compile Include="ExerciseEntityProvider.cs" />
+    <Compile Include="BodyPartXMLProvider.cs" />
     <Compile Include="ExerciseSQLProvider.cs" />
     <Compile Include="ExerciseTypeSQLProvider.cs" />
+    <Compile Include="ExerciseTypeXMLProvider.cs" />
     <Compile Include="ExerciseXMLProvider.cs" />
-    <Compile Include="MemberProvider.cs" />
+    <Compile Include="MemberXMLProvider.cs" />
     <Compile Include="PersonSQLProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -36,13 +36,44 @@ namespace WorkoutLog.Data
             }
         }
 
-        /// <summary>
-        /// Get all exercise record.
-        /// </summary>
-        /// <returns>ExerciseList</returns>
-        public List<Exercise> GetAll()
+        public Exercise GetByID(int id)
         {
-            return ExerciseList;
+            var exercise = new Exercise();
+            for (int i = 0; i < ExerciseList.Count; i++)
+            {
+                if (ExerciseList[i].ID == id)
+                {                    
+                    exercise.ID = ExerciseList[i].ID;
+                    exercise.BodyPartID = ExerciseList[i].BodyPartID;
+                    exercise.BodyParts = ExerciseList[i].BodyParts;
+                    exercise.CurrentDate = ExerciseList[i].CurrentDate;
+                    exercise.EmailAddress = ExerciseList[i].EmailAddress;
+                    exercise.ExerciseName = ExerciseList[i].ExerciseName;
+                    exercise.ExerciseSets = ExerciseList[i].ExerciseSets;
+                    exercise.ExerciseTypeID = ExerciseList[i].ExerciseTypeID;
+                    exercise.Reps = ExerciseList[i].Reps;
+                    exercise.Weights = ExerciseList[i].Weights;
+                }
+            }
+            return exercise;
+        }
+
+        /// <summary>
+        /// Get all exercise for the user that is logged in
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns>exercise</returns>
+        public List<Exercise> GetAll(string email)
+        {
+            var exercise = new List<Exercise>();
+            for (int i = 0; i < ExerciseList.Count; i++)
+            {                
+                if (ExerciseList[i].EmailAddress == email)
+                {
+                    exercise.Add(ExerciseList[i]);                    
+                }
+            }
+            return exercise;
         }
 
         /// <summary>
@@ -109,6 +140,7 @@ namespace WorkoutLog.Data
                     ExerciseList[i].Reps = exercise.Reps;
                     ExerciseList[i].Weights = exercise.Weights;
                     ExerciseList[i].CurrentDate = exercise.CurrentDate;
+                    break;
                 }
             }
             Save();

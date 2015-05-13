@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using WorkoutLog.Core.Interfaces;
+using WorkoutLog.Core.Model;
 using WorkoutLog.Data;
 
 
@@ -12,12 +13,6 @@ namespace WorkoutLog.Web
 {
     public partial class Registration : System.Web.UI.Page, IPersons
     {
-        private string _userName;
-        private string _email;
-        private string _password;
-        private string _confirmpassword;   
-
-
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -28,9 +23,15 @@ namespace WorkoutLog.Web
             if (ValidateRegistration())
             {
                 //Insert member
-                var provider = new PersonSQLProvider(System.Configuration.ConfigurationManager.ConnectionStrings["ExerciseConnString"].ConnectionString);
+                var provider = new PersonsProvider();
 
-                if (provider.Insert(this))
+                var person = new Persons();
+
+                person.EmailAddress = EmailAddress;
+                person.UserName = UserName;
+                person.UserPassword = UserPassword;
+
+                if (provider.Insert(person))
                 {
                     Response.Redirect("Login.aspx");
                 }
@@ -61,7 +62,7 @@ namespace WorkoutLog.Web
 
             if (passwordTextBox.Text.Length < 3)
             {
-                
+
                 passwordMsg.Text = "Password must be at least 3 characters long";
                 isValid = false;
             }
@@ -126,39 +127,16 @@ namespace WorkoutLog.Web
 
         private bool UserExists(string email)
         {
-            var provider = new PersonSQLProvider(System.Configuration.ConfigurationManager.ConnectionStrings["ExerciseConnString"].ConnectionString);
+            var provider = new PersonsProvider();
 
-            if (provider.GetById(email) != null) 
-            { 
-                return true; 
+            if (provider.GetByKey(email) != null)
+            {
+                return true;
             }
 
             return false;
         }
 
-        //protected void CreateUserWizard1_NextButtonClick(object sender, WizardNavigationEventArgs e)
-        //{
-            
-        //    if (e.CurrentStepIndex == 0)
-        //    {
-        //        if (SearchAccount.Text.Trim() == "" || UserExists(SearchAccount.Text))
-        //        {
-        //            SearchAccountMessage.Text = "That account already exists. Please select an different account name.";
-        //            e.Cancel = true;
-        //        }
-        //        else
-        //        {
-        //            TextBox userName =
-        //              (TextBox)CreateUserWizard1.CreateUserStep.ContentTemplateContainer.FindControl("UserName");
-        //            userName.Text = SearchAccount.Text;
-        //            SearchAccountMessage.Text = "";
-        //            e.Cancel = false;
-
-        //            //TODO: insert user
-        //            //TODO: Redirect to login page
-        //        }
-        //    }
-        //}
 
         public string EmailAddress
         {

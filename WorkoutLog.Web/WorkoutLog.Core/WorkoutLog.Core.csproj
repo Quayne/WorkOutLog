@@ -47,6 +47,7 @@
     <Compile Include="Interfaces\IExercise.cs" />
     <Compile Include="Interfaces\IExerciseType.cs" />
     <Compile Include="Interfaces\IPersons.cs" />
+    <Compile Include="Interfaces\IProvider.cs" />
     <Compile Include="Model\BodyParts.cs" />
     <Compile Include="Model\Exercise.cs" />
     <Compile Include="Model\ExerciseType.cs" />

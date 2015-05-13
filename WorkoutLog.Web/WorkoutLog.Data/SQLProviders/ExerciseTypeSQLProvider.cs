@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 using WorkoutLog.Core.Interfaces;
 using WorkoutLog.Core.Model;
 
-namespace WorkoutLog.Data
+namespace WorkoutLog.Data.SQLProviders
 {
-    public class ExerciseTypeSQLProvider : BaseSQLProvider<IExerciseType>
+    internal class ExerciseTypeSQLProvider : BaseSQLProvider<ExerciseType>
     {
         public ExerciseTypeSQLProvider(string connString) : base(connString) { }
 
-        public IExerciseType GetById(int Id)
+        public ExerciseType GetById(int Id)
         {
             var exerciseType = new ExerciseType();
             using (var conn = new SqlConnection(_connString))
@@ -44,7 +44,7 @@ namespace WorkoutLog.Data
         }
 
 
-        public override bool Insert(IExerciseType item)
+        public override bool Insert(ExerciseType item)
         {
             throw new NotImplementedException();
         }
@@ -54,14 +54,14 @@ namespace WorkoutLog.Data
             throw new NotImplementedException();
         }
 
-        public override bool Update(IExerciseType item)
+        public override bool Update(ExerciseType item)
         {
             throw new NotImplementedException();
         }
 
-        public override List<IExerciseType> GetAll()
+        public override List<ExerciseType> GetAll()
         {
-            var toReturn = new List<IExerciseType>();
+            var toReturn = new List<ExerciseType>();
             using (var conn = new SqlConnection(_connString))
             {
                 conn.Open();

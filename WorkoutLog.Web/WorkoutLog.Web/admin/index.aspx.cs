@@ -21,33 +21,22 @@ namespace WorkoutLog.Web
             base.OnPreRender(e);
 
             var loginUser = HttpContext.Current.User.Identity.Name;
+            var person = new PersonsProvider();
+            Persons name = person.GetByKey(loginUser);
 
-            if (Variables.UseXmlDataSource)
-            {
-                var provider = new ExerciseXMLProvider(Server.MapPath(Variables.ExerciseXmlFilePath));
+            LoginName.Text = name.UserName;
+
+           
+                var provider = new ExerciseProvider();
 
                 //TODO: get all the records from the exercise.xml file based on the user that is logged in
-                var items = provider.GetAll(loginUser);
+                var items = provider.GetAllByKey(loginUser);
 
                 //Sets the data source that provides data for populating the repeater
                 Repeater1.DataSource = items;
 
                 //Binding data to the repeater
-                Repeater1.DataBind();
-            }
-            else
-            {                
-                var provider = new ExerciseSQLProvider(System.Configuration.ConfigurationManager.ConnectionStrings["ExerciseConnString"].ConnectionString);
-
-                //get all the records from the database based on the user that is logged in
-                var items = provider.GetAllByUser(loginUser);
-
-                //Sets the data source that provides data for populating the repeater
-                Repeater1.DataSource = items;
-
-                //Binding data to the repeater
-                Repeater1.DataBind();
-            }
+                Repeater1.DataBind();            
         }
 
         /// <summary>
@@ -63,20 +52,10 @@ namespace WorkoutLog.Web
             int.TryParse(e.CommandArgument as string, out tempId);
 
 
-            if (Variables.UseXmlDataSource)
-            {
-                var provider = new ExerciseXMLProvider(Server.MapPath(Variables.ExerciseXmlFilePath));
+                var provider = new ExerciseProvider();
 
                 //pass the ExerciseID to the ExerciseXMLProvider that should be deleted from the Exercise.xml file
-                provider.Delete(tempId);
-            }
-            else
-            {
-                var provider = new ExerciseSQLProvider(System.Configuration.ConfigurationManager.ConnectionStrings["ExerciseConnString"].ConnectionString);
-
-                //pass the ExerciseID to the ExerciseSQLProvider that should be deleted from the database
-                provider.Delete(tempId);
-            }
+                provider.Delete(tempId);         
         }
 
     }

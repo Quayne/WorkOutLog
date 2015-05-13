@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-lg-8">
                 <h1>Hello
-                    <asp:LoginName ID="LoginName1" runat="server" />
+                    <asp:Label Text="" ID="LoginName" runat="server" />
                 </h1>
             </div>
         </div>

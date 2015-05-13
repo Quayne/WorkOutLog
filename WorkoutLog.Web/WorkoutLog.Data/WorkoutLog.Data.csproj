@@ -34,6 +34,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -42,15 +43,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseSQLProvider.cs" />
-    <Compile Include="BodyPartSQLProvider.cs" />
-    <Compile Include="BodyPartXMLProvider.cs" />
-    <Compile Include="ExerciseSQLProvider.cs" />
-    <Compile Include="ExerciseTypeSQLProvider.cs" />
-    <Compile Include="ExerciseTypeXMLProvider.cs" />
-    <Compile Include="ExerciseXMLProvider.cs" />
-    <Compile Include="MemberXMLProvider.cs" />
-    <Compile Include="PersonSQLProvider.cs" />
+    <Compile Include="SQLProviders\BaseSQLProvider.cs" />
+    <Compile Include="XMLProviders\BaseXMLProvider.cs" />
+    <Compile Include="BodyPartsProvider.cs" />
+    <Compile Include="SQLProviders\BodyPartSQLProvider.cs" />
+    <Compile Include="XMLProviders\BodyPartXMLProvider.cs" />
+    <Compile Include="ExerciseProvider.cs" />
+    <Compile Include="SQLProviders\ExerciseSQLProvider.cs" />
+    <Compile Include="ExerciseTypeProvider.cs" />
+    <Compile Include="SQLProviders\ExerciseTypeSQLProvider.cs" />
+    <Compile Include="XMLProviders\ExerciseTypeXMLProvider.cs" />
+    <Compile Include="XMLProviders\ExerciseXMLProvider.cs" />
+    <Compile Include="PersonsProvider.cs" />
+    <Compile Include="XMLProviders\PersonsXMLProvider.cs" />
+    <Compile Include="SQLProviders\PersonSQLProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -59,6 +65,7 @@
       <Name>WorkoutLog.Core</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

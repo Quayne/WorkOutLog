@@ -13,13 +13,13 @@ namespace WorkoutLog.Web {
     public partial class WorkoutTable {
         
         /// <summary>
-        /// LoginName1 control.
+        /// LoginName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LoginName LoginName1;
+        protected global::System.Web.UI.WebControls.Label LoginName;
         
         /// <summary>
         /// Repeater1 control.

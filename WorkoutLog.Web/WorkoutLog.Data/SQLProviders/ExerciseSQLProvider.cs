@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 using WorkoutLog.Core.Interfaces;
 using WorkoutLog.Core.Model;
 
-namespace WorkoutLog.Data
+namespace WorkoutLog.Data.SQLProviders
 {
-    public class ExerciseSQLProvider : BaseSQLProvider<IExercise>
+    internal class ExerciseSQLProvider : BaseSQLProvider<Exercise>
     {
         public ExerciseSQLProvider(string connString) : base(connString) { }
 
@@ -18,7 +18,7 @@ namespace WorkoutLog.Data
         /// </summary>
         /// <param name="Id"></param>
         /// <returns>record with the specified Id</returns>
-        public IExercise GetById(int Id)
+        public override Exercise GetByID(int Id)
         {
             var exercise = new Exercise();
             string selectQuery = "SELECT * FROM Exercise WHERE ID = @ID";
@@ -68,8 +68,7 @@ namespace WorkoutLog.Data
                         if (float.TryParse(dr["Weights"].ToString(), out tempFloat))
                         {
                             exercise.Weights = tempFloat;
-                        }
-                        
+                        }                        
                     }                    
                 }                
             }
@@ -81,7 +80,7 @@ namespace WorkoutLog.Data
         /// </summary>
         /// <param name="exercise"></param>
         /// <returns>true if the number of rows affected is greater than 0, false otherwise</returns>
-        public override bool Insert(IExercise exercise)
+        public override bool Insert(Exercise exercise)
         {
             const string cmd = "INSERT INTO Exercise VALUES (@CurrentDate,@ExerciseSets,@Reps,@Weights,@EmailAddress,@BodyPartID,@ExerciseTypeID);";
             try
@@ -115,7 +114,7 @@ namespace WorkoutLog.Data
         /// </summary>
         /// <param name="exercise"></param>
         /// <returns>true if numberOfRowsAffected = 1, false otherwise</returns>
-        public override bool Update(IExercise exercise)
+        public override bool Update(Exercise exercise)
         {
             var isUpdated = false;
             using (var conn = new SqlConnection(_connString))
@@ -169,9 +168,9 @@ namespace WorkoutLog.Data
         /// Get all Exercise record
         /// </summary>
         /// <returns>all Exercise record</returns>
-        public override List<IExercise> GetAll()
+        public override List<Exercise> GetAll()
         {
-            var toReturn = new List<IExercise>();
+            var toReturn = new List<Exercise>();
             using (var conn = new SqlConnection(_connString))
             {
                 conn.Open();
@@ -215,9 +214,9 @@ namespace WorkoutLog.Data
             return toReturn;
         }
 
-        public List<IExercise> GetAllByUser(string email)
+        public override List<Exercise> GetAllByKey(string email)
         {
-            var toReturn = new List<IExercise>();
+            var toReturn = new List<Exercise>();
             using (var conn = new SqlConnection(_connString))
             {
                 conn.Open();

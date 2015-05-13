@@ -74,14 +74,26 @@
   </Exercise>
   <Exercise>
     <ID>8</ID>
-    <CurrentDate>2015-05-08T18:57:43.0043249-04:00</CurrentDate>
+    <CurrentDate>2015-05-12T21:07:19.1142097-04:00</CurrentDate>
     <ExerciseSets>5</ExerciseSets>
-    <Weights>50</Weights>
+    <Weights>100</Weights>
     <Reps>50</Reps>
+    <EmailAddress>quayne@hotmail.com</EmailAddress>
+    <BodyPartID>4</BodyPartID>
+    <ExerciseTypeID>4</ExerciseTypeID>
+    <ExerciseName>4</ExerciseName>
+    <BodyParts>4</BodyParts>
+  </Exercise>
+  <Exercise>
+    <ID>9</ID>
+    <CurrentDate>2015-05-12T21:08:59.8919641-04:00</CurrentDate>
+    <ExerciseSets>12</ExerciseSets>
+    <Weights>100</Weights>
+    <Reps>30</Reps>
     <EmailAddress>quayne@gmail.com</EmailAddress>
-    <BodyPartID>3</BodyPartID>
-    <ExerciseTypeID>2</ExerciseTypeID>
-    <ExerciseName>2</ExerciseName>
-    <BodyParts>3</BodyParts>
+    <BodyPartID>2</BodyPartID>
+    <ExerciseTypeID>3</ExerciseTypeID>
+    <ExerciseName>3</ExerciseName>
+    <BodyParts>2</BodyParts>
   </Exercise>
 </ArrayOfExercise>

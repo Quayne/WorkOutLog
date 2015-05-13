@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 using WorkoutLog.Core.Interfaces;
 using WorkoutLog.Core.Model;
 
-namespace WorkoutLog.Data
+namespace WorkoutLog.Data.SQLProviders
 {
-    public class PersonSQLProvider : BaseSQLProvider<IPersons>
+    internal class PersonSQLProvider : BaseSQLProvider<Persons>
     {
         public PersonSQLProvider(string connString) : base(connString) { }
 
-        public IPersons GetById(string email)
+        public override Persons GetByKey(string email)
         {
             Persons person = null;
             using (var conn = new SqlConnection(_connString))
@@ -40,7 +40,7 @@ namespace WorkoutLog.Data
             return person;
         }
 
-        public bool ValidatePerson(string email, string password)
+        public override bool ValidateUser(string email, string password)
         {
             var isUser = false;
 
@@ -73,7 +73,7 @@ namespace WorkoutLog.Data
         }
 
 
-        public override bool Insert(IPersons person)
+        public override bool Insert(Persons person)
         {
             const string cmd = "INSERT INTO Persons VALUES (@email,@username,@password);";
             try
@@ -103,12 +103,12 @@ namespace WorkoutLog.Data
             throw new NotImplementedException();
         }
 
-        public override bool Update(IPersons item)
+        public override bool Update(Persons item)
         {
             throw new NotImplementedException();
         }
 
-        public override List<IPersons> GetAll()
+        public override List<Persons> GetAll()
         {
             throw new NotImplementedException();
         }

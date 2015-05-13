@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 using WorkoutLog.Core.Interfaces;
 using WorkoutLog.Core.Model;
 
-namespace WorkoutLog.Data
+namespace WorkoutLog.Data.SQLProviders
 {
-    public class BodyPartSQLProvider : BaseSQLProvider<IBodyParts>
+    internal class BodyPartSQLProvider : BaseSQLProvider<BodyParts>
     {
         public BodyPartSQLProvider(string connString) : base(connString) { }
 
@@ -47,7 +47,7 @@ namespace WorkoutLog.Data
             return bodyParts;
         }
 
-        public override bool Insert(IBodyParts item)
+        public override bool Insert(BodyParts item)
         {
             throw new NotImplementedException();
         }
@@ -59,14 +59,14 @@ namespace WorkoutLog.Data
             return false;
         }
 
-        public override bool Update(IBodyParts item)
+        public override bool Update(BodyParts item)
         {
             throw new NotImplementedException();
         }
 
-        public override List<IBodyParts> GetAll()
+        public override List<BodyParts> GetAll()
         {
-            var toReturn = new List<IBodyParts>();
+            var toReturn = new List<BodyParts>();
             using (var conn = new SqlConnection(_connString))
             {
                 conn.Open();

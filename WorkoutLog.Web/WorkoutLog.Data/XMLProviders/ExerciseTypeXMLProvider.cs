@@ -14,7 +14,7 @@ namespace WorkoutLog.Data.XMLProviders
 
         public ExerciseTypeXMLProvider(string xmlFilePath) : base(xmlFilePath) { }
 
-        public ExerciseType GetById(int id)
+        public override ExerciseType GetByID(int id)
         {
             var exercise = new ExerciseType();
             for (int i = 0; i < Items.Count; i++)

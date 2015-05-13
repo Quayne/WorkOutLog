@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<ArrayOfExerciseType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ExerciseType>
+    <ID>1</ID>
+    <ExerciseName>ALTERNATE INCLINE DUMBBELL CURL</ExerciseName>  
+  </ExerciseType>
+  <ExerciseType>
+    <ID>2</ID>
+    <ExerciseName>RACK PULLS</ExerciseName>  
+  </ExerciseType>
+  <ExerciseType>
+    <ID>3</ID>
+    <ExerciseName>PIN PRESSES</ExerciseName>  
+  </ExerciseType>
+  <ExerciseType>
+    <ID>4</ID>
+    <ExerciseName>DECLINE DUMBBELL FLYES</ExerciseName>  
+  </ExerciseType>
+</ArrayOfExerciseType>

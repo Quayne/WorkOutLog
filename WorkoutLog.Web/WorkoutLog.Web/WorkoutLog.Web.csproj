@@ -60,12 +60,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="admin\index.aspx" />
+    <None Include="Properties\PublishProfiles\Deployment.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="App_Data\bodyParts.xml" />
+    <Content Include="App_Data\exercise.xml" />
+    <Content Include="App_Data\exerciseType.xml" />
+    <Content Include="App_Data\members.xml" />
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\main.css" />
     <Content Include="css\starter-template.css" />
@@ -78,6 +83,7 @@
     <Content Include="js\validation.js" />
     <Content Include="Login.aspx" />
     <Content Include="Registration.aspx" />
+    <Content Include="UserControls\Twitter.ascx" />
     <Content Include="WorkoutLog.Master" />
   </ItemGroup>
   <ItemGroup>
@@ -113,6 +119,13 @@
     <Compile Include="Registration.aspx.designer.cs">
       <DependentUpon>Registration.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Twitter.ascx.cs">
+      <DependentUpon>Twitter.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Twitter.ascx.designer.cs">
+      <DependentUpon>Twitter.ascx</DependentUpon>
+    </Compile>
     <Compile Include="WorkoutLog.Master.cs">
       <DependentUpon>WorkoutLog.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -129,7 +142,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

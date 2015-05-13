@@ -36,12 +36,13 @@ namespace WorkoutLog.Data.XMLProviders
         /// <returns></returns>
         public override Persons GetByKey(string key)
         {
-            var person = new Persons();
+            Persons person = null;
 
             for (int i = 0; i < Items.Count; i++)
             {
                 if (Items[i].EmailAddress == key)
                 {
+                    person = new Persons();
                     person.EmailAddress = Items[i].EmailAddress;
                     person.UserName = Items[i].UserName;
                     return person;
@@ -58,6 +59,25 @@ namespace WorkoutLog.Data.XMLProviders
             //return query.FirstOrDefault();
 
         }
+        public void Save()
+        {
+            SerializationHelper.Serialize<List<Persons>>(_xmlFilePath, Items);
+        }
+
+        public override bool Insert(Persons item)
+        {
+            Items.Add(new Persons
+            {                
+                EmailAddress = item.EmailAddress,
+                UserName = item.UserName,
+                UserPassword = item.UserPassword
+            });
+            Save();
+            return true;            
+        }
+
+
+   
 
     }
 }

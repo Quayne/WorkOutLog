@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WorkoutLog.Core;
 using WorkoutLog.Core.Helpers;
 using WorkoutLog.Core.Interfaces;
 using WorkoutLog.Core.Model;
@@ -29,6 +30,10 @@ namespace WorkoutLog.Data.XMLProviders
             {
                 if (Items[i].ID == id)
                 {
+                    var bpProvider = new BodyPartXMLProvider("");
+
+                    var bodyPart = bpProvider.GetByID(Items[i].BodyPartID);
+
                     exercise.ID = Items[i].ID;
                     exercise.BodyPartID = Items[i].BodyPartID;
                     exercise.BodyParts = Items[i].BodyParts;
@@ -51,11 +56,20 @@ namespace WorkoutLog.Data.XMLProviders
         /// <returns>exercise</returns>
         public override List<Exercise> GetAllByKey(string email)
         {
+            var bodyPartProvider = new BodyPartXMLProvider(Variables.BodyPartXmlFilePath);
+            var exerciseTypeProvider = new ExerciseTypeXMLProvider(Variables.ExerciseTypeXmlFilePath);
+
             var exercise = new List<Exercise>();
+
             for (int i = 0; i < Items.Count; i++)
             {
                 if (Items[i].EmailAddress == email)
                 {
+                    var bodyPart = bodyPartProvider.GetByID(Items[i].BodyPartID);
+                    var exerciseType = exerciseTypeProvider.GetByID(Items[i].ExerciseTypeID);
+
+                    Items[i].BodyParts = bodyPart.BodyPartName;
+                    Items[i].ExerciseName = exerciseType.ExerciseName;
                     exercise.Add(Items[i]);                    
                 }
             }
@@ -150,7 +164,7 @@ namespace WorkoutLog.Data.XMLProviders
         /// Check for the ID with the highest value then add 1
         /// </summary>
         /// <returns>The highest ID + 1</returns>
-        private int IncrementHighestId()
+        public int IncrementHighestId()
         {
             int highestID = (Items.Count() == 0) ? 0 : Items[0].ID;
 

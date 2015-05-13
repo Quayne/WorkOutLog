@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<ArrayOfBodyParts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <BodyParts>
+    <ID>1</ID>
+    <BodyPartName>Biceps</BodyPartName>  
+  </BodyParts>
+  <BodyParts>
+    <ID>2</ID>
+    <BodyPartName>Shoulders</BodyPartName>  
+  </BodyParts>
+  <BodyParts>
+    <ID>3</ID>
+    <BodyPartName>Chest</BodyPartName>  
+  </BodyParts>
+  <BodyParts>
+    <ID>4</ID>
+    <BodyPartName>Triceps</BodyPartName>  
+  </BodyParts>
+</ArrayOfBodyParts>

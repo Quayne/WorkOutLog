@@ -32,6 +32,6 @@
     display: block;
 }
 
-#errorList {
+#errorList, #registrationErrorList {
     display: none;
 }

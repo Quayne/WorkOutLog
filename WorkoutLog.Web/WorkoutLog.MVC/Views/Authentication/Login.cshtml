@@ -1,0 +1,125 @@
+﻿@model WorkoutLog.Core.Interfaces.IPersons
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@using (Html.BeginForm())
+{
+
+    <div class="container top-edge form-horizontal">
+
+        <div class="row">
+            
+            <div class="form-group">
+                @Html.Label("Email", "Email", new { @class = "col-lg-2 control-label" })
+                <div class="col-sm-4">
+                    @Html.TextBoxFor(model => model.EmailAddress, new { @class = "form-control", @placeholder = "me@test.com", data_error_text = "" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Password", "Password", new { @class = "col-lg-2 control-label" })
+                <div class="col-sm-4">
+                    @Html.PasswordFor(Model => Model.UserPassword, new { @class = "form-control", @placeholder = "123" })
+                </div>
+            </div>
+
+            @*<div class="form-group">
+                <div class="col-sm-offset-2 col-sm-4">
+                    <div class="checkbox">
+                         @Html.CheckBox("")
+                    </div>
+                </div>
+            </div>*@
+
+            <div class="form-group">
+                <p class="bg-danger">@ViewBag.Summary</p>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-4">
+                    <button id="btnLogin" class="btn btn-primary" type="submit">Log In</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <div class="row">
+                 @*ABOUT SECTION*@ 
+                <div class="col-md-12">
+                    <h2 class="h2 text-center">About Workout Log</h2>
+                    <p>Workout Log is an ASP.NET MVC 4 application that is used to keep track of your exercise activities. It requires you to have membership before your login can be authenticated. Once you are a member and your login credentials are verified, all of your exercise records will return from the database or an xml file and will be displayed in a table. You will then have functionality to add, edit or delete records.</p>
+                    <p>The purpose of this application is to build my resume portfolio and demonstrate some of the skills and qualifications that I possess. As time goes by, I will continuously be making changes to optimize performance to the best of my abilities.</p>
+                </div>
+            </div>
+            <div class="row">
+                <h2 class="h2 text-center">Things I did in this project</h2>
+                <div class="col-md-4">
+                    <ul>
+                        <li>ASP.NET MVC 4</li>
+                        <li>Javascript</li>
+                        <li>jQuery</li>
+                        <li>C#</li>
+                        <li>ADO.NET</li>
+                        <li>Web Config</li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul>
+                        <li>SQL<a href="https://github.com/Quayne/WorkOutLog/blob/master/WorkoutLog.Web/WorkoutLog.Core/bin/Debug/ExerciseLog.sql">(.sql)</a></li>
+                        <li>XML</li>
+                        <li>OOP</li>
+                        <li>Abstract Class</li>
+                        <li>Interfaces</li>
+                        <li>Password Hashing</li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul>
+                        <li>Bootstrap</li>                        
+                        <li>Source Control(<a href="https://github.com/Quayne/WorkOutLog">GitHub</a>)</li>
+                        <li>Visual Studio 2013</li>
+                        <li>MS SQL Server 2014</li>
+                    </ul>
+                </div>
+            </div>
+            @*<%--<div class="row">
+                <div class="col-md-6">
+                    <h4 class="h4 text-center">Bootstrap</h4>
+                    <p> I use bootstrap because it provides a good user experience for mobile and desktop browsers.(<a href="http://codeboxr.com/blogs/top-5-advantages-of-responsive-web-page-design" title="Link to more info.">Responsive Web Design</a>)</p>
+                </div>
+                <div class="col-md-6">
+                    <h4 class="h4 text-center">Javascript</h4>
+                    <p>In this project, I used javascript and jQuery to do validations on each text box when the user submits or edit an exercise.</p>
+                </div>
+            </div>--%>*@
+            <div class="row">
+                <h2 class="text-center">Things to be done</h2>
+                <div class="col-md-12">
+                    <ol>                        <                        
+                        <li>Make a copy of the current project using AngularJS and Web API</li>
+                        <li>Add password changing capability</li>
+                        <li>Allow member cancellation</li>
+                        @*<%--
+                        <li>Make dropdown items more realistic</li>--%>*@                        
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-12 col-xs-12">
+            <div>
+               @* TWITTER WIDGET HERE *@   
+                <a class="twitter-timeline" href="https://twitter.com/HazzaBrown1" data-widget-id="598500634543927296">Tweets by @@HazzaBrown1</a>
+                <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + "://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");</script>        
+            </div>
+        </div>
+    </div>
+</div>

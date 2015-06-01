@@ -68,6 +68,7 @@ namespace WorkoutLog.Data.XMLProviders
 
         public virtual List<T> GetAll()
         {
+            
             throw new NotImplementedException();
         }
 

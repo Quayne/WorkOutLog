@@ -11,7 +11,7 @@ namespace WorkoutLog.Core.Model
     [Serializable]
     public class Exercise : IExercise
     {
-        //private string _email;
+        private string _email;
         private DateTime _currentDate = DateTime.Now;
 
 
@@ -51,11 +51,11 @@ namespace WorkoutLog.Core.Model
             set;
         }
 
-        
+
         public string EmailAddress
         {
-            get; //{ return "quayne@gmail.com"; }
-            set; //{ _email = "quayne@gmail.com"; }
+            get;
+            set;
         }
 
         public int BodyPartID

@@ -25,6 +25,7 @@
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="/js/ie-emulation-modes-warning.js"></script>
 
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
           <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -56,7 +57,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="#">My Workout Log</a>
+                        <a class="navbar-brand" href="#">Workout Log(Resume Portfolio)</a>
                     </div>
                     <div id="navbar" class="collapse navbar-collapse navbar-right">
                         <ul class="nav navbar-nav">
@@ -66,12 +67,15 @@
                     </div>
                     <!--nav-collapse -->
                 </div>
-            </nav>
+            </nav>            
             
             <asp:ContentPlaceHolder ID="Header" runat="server">
             </asp:ContentPlaceHolder>
 
             <asp:ContentPlaceHolder ID="Content" runat="server">
+            </asp:ContentPlaceHolder>
+
+            <asp:ContentPlaceHolder ID="ContentBody" runat="server">
             </asp:ContentPlaceHolder>
 
             <asp:ContentPlaceHolder ID="Footer" runat="server">

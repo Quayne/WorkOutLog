@@ -47,7 +47,7 @@ namespace WorkoutLog.Data.SQLProviders
             using (var conn = new SqlConnection(_connString))
             {
                 conn.Open();
-                const string selectQuery = "SELECT * FROM Persons WHERE EmailAddress LIKE @email AND UserPassword LIKE @password";
+                const string selectQuery = "SELECT * FROM Persons WHERE EmailAddress = @email AND UserPassword = @password";
 
                 SqlCommand command = new SqlCommand(selectQuery, conn);
                 command.Parameters.AddWithValue("@email", email);

@@ -4,6 +4,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="Content" runat="Server">
     <div class="container top-edge">
 
+        <div class="alert-warning">
+            <h4 class="text-warning text-center">Password is not hashed; therefore, it is not secure.</h4>
+        </div>
+
         <div class="form-group">
             <asp:Label ID="usernameLabel" AssociatedControlID="usernameTextBox" Text="Username" CssClass="col-lg-2 control-label" runat="server" />
             <div class="col-lg-4">
@@ -35,9 +39,9 @@
         </div>
 
         <div class="form-group">
-            <asp:Label ID="confirmPasswordLabel" AssociatedControlID="confirmPasswordTextBox" Text="Re-type Password" CssClass="col-lg-2 control-label" runat="server" />
+            <asp:Label ID="confirmPasswordLabel" AssociatedControlID="confirmPasswordTextBox" Text="Confirm Password" CssClass="col-lg-2 control-label" runat="server" />
             <div class="col-lg-4">
-                <asp:TextBox type="password" CssClass="form-control" ID="confirmPasswordTextBox" placeholder="Re-type Password" runat="server" />
+                <asp:TextBox type="password" CssClass="form-control" ID="confirmPasswordTextBox" placeholder="Confirm Password" runat="server" />
             </div>
             <div class="col-lg-6">               
                 <asp:Label ID="confirmPasswordMsg" Text="" AssociatedControlID="confirmPasswordTextBox" CssClass="bg-danger" runat="server" />

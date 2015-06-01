@@ -2,14 +2,14 @@
 <ArrayOfExercise xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Exercise>
     <ID>1</ID>
-    <CurrentDate>2015-05-13T10:34:50.9779241-04:00</CurrentDate>
-    <ExerciseSets>1</ExerciseSets>
-    <Weights>80</Weights>
+    <CurrentDate>2015-05-29T11:56:35.0822917-04:00</CurrentDate>
+    <ExerciseSets>12</ExerciseSets>
+    <Weights>100</Weights>
     <Reps>10</Reps>
-    <EmailAddress>quayne@hotmail.com</EmailAddress>
-    <BodyPartID>4</BodyPartID>
-    <ExerciseTypeID>3</ExerciseTypeID>
-    <ExerciseName>3</ExerciseName>
-    <BodyParts>4</BodyParts>
+    <EmailAddress>quayne@workout.com</EmailAddress>
+    <BodyPartID>1</BodyPartID>
+    <ExerciseTypeID>1</ExerciseTypeID>
+    <ExerciseName>1</ExerciseName>
+    <BodyParts>1</BodyParts>
   </Exercise>
 </ArrayOfExercise>

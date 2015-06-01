@@ -44,12 +44,12 @@ namespace WorkoutLog.Data
 
         public List<Exercise> GetAll()
         {
-            throw new NotImplementedException();
+            return _provider.GetAll();            
         }
 
         public List<Exercise> GetAllById(int id)
         {
-            throw new NotImplementedException();
+            return _provider.GetAll();
         }
 
         public bool ValidateUser(string user, string password)

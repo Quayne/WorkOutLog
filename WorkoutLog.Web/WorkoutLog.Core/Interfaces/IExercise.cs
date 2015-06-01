@@ -26,7 +26,7 @@ namespace WorkoutLog.Core.Interfaces
         [Required(ErrorMessage = "Please Enter a valid input for REPS. Input must be an integer greater than 0.")]
         [Range(1, 1000, ErrorMessage = "Please Enter a valid input for REPS. Input must be an integer between and 0 and 1000.")]
         int Reps { get; set; }
-
+        
         string EmailAddress { get; set; }
 
         int BodyPartID { get; set; }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using WorkoutLog.Core;
+using WorkoutLog.Core.Helpers;
 using WorkoutLog.Core.Interfaces;
 using WorkoutLog.Core.Model;
 using WorkoutLog.Data.SQLProviders;
@@ -25,6 +26,9 @@ namespace WorkoutLog.Data
 
         public bool Insert(Persons item)
         {
+            var hashedPassword = PasswordHasher.Hash(item.UserPassword);
+            item.UserPassword = hashedPassword.Hash;
+
             return _provider.Insert(item);
         }
 
@@ -40,7 +44,9 @@ namespace WorkoutLog.Data
 
         public bool ValidateUser(string user, string password)
         {
-           return _provider.ValidateUser(user, password);            
+            var encryptedPassword = PasswordHasher.Hash(password);            
+
+            return _provider.ValidateUser(user, encryptedPassword.Hash);           
         }
 
         public List<Persons> GetAllByKey(string key)

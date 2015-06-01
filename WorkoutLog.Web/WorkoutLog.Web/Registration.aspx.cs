@@ -173,5 +173,18 @@ namespace WorkoutLog.Web
                 passwordTextBox.Text = value.ToString();
             }
         }
+
+
+        public string ConfirmPassword
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
     }
 }

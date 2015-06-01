@@ -22,7 +22,45 @@ function validateWorkOutProperties() {
     return isValid;
 }
 
+/*Validate Login and registration page*/
+function validatePerson() {
+    var isValid = true;
+    $('#registrationErrorList ul').html('');
 
+    if (!isValidUsername($('#usernameTextBox').val())) {
+        $('#usernameTextBox').parents('.form-group').addClass('has-error');
+        $('#registrationErrorList ul').append('<li>' + $('#usernameTextBox').data('error-text') + '</li>');
+        isValid = false;
+    }else {
+        $('#usernameTextBox').parents('.form-group').removeClass('has-error');
+    }
+
+    if (!isValidEmail($('#emailTextBox').val())) {
+        $('#emailTextBox').parents('.form-group').addClass('has-error');
+        $('#registrationErrorList ul').append('<li>' + $('#emailTextBox').data('error-text') + '</li>');
+        isValid = false;
+    } else {
+        $('#emailTextBox').parents('.form-group').removeClass('has-error');
+    }
+
+    if (!isPasswordMatch($('#passwordTextBox').val())) {
+        $('#passwordTextBox').parents('.form-group').addClass('has-error');
+        $('#registrationErrorList ul').append('<li>' + $('#passwordTextBox').data('error-text') + '</li>');
+        isValid = false;
+    } else {
+        $('#passwordTextBox').parents('.form-group').removeClass('has-error');
+        $('#confirmPasswordTextBox').parents('.form-group').removeClass('has-error');
+    }
+
+    if (!isValid)
+        $('#registrationErrorList').slideDown('fast');
+    else
+        $('#registrationErrorList').slideUp('fast');
+
+    return isValid;
+}
+
+/*Return true if number is greater than 0, false otherwise*/
 function isPositiveNumber(inputNumber) {
     if (inputNumber > 0) {
         return true;
@@ -32,6 +70,7 @@ function isPositiveNumber(inputNumber) {
     }
 }
 
+/*Return true is textbox is empty, false otherwise*/
 function isTextBoxEmpty(txtBoxInput) {
     if (txtBoxInput == null || txtBoxInput == "") {
         return true;
@@ -41,39 +80,12 @@ function isTextBoxEmpty(txtBoxInput) {
     }
 }
 
-/*START REGISTRATION VALIDATION*/
-function submitRegistrationEvent() {
-    var isAllFieldValid = false;
+function isValidUsername(username) {
 
-    if (isValidUsername() && isValidEmail() && isPasswordMatch()) {
-        alert("Registration Successful!!");
-        return true;
-    }
-    if (!isValidUsername()) {
-        isAllFieldValid = false;
-    }
-    if (!isValidEmail()) {
-        isAllFieldValid = false;
-    }
-    if (!isPasswordMatch()) {
-        isAllFieldValid = false;
-    }
-
-    return isAllFieldValid;
-}
-
-
-function isValidUsername() {
-    var username = document.getElementById("username").value;
-
-    username = username.trim();
-
-    if (isTextBoxEmpty(username)) {
-        document.getElementById("usernameMsg").innerHTML = "The username field must be filled out.";
+    if (isTextBoxEmpty(username)) {       
         return false;
     }
     else if (username.length < 4) {
-        document.getElementById("usernameMsg").innerHTML = "Username must be 4 or more characters.";
         return false;
     }
     else {
@@ -81,53 +93,40 @@ function isValidUsername() {
     }
 }
 
-function isPasswordMatch() {
+function isPasswordMatch(password) {
     var isPasswordMatch = false;
-    var passwordErrMsg;
+ 
+    var reTypedPassword = $('#confirmPasswordTextBox').val();
 
-    var password = document.getElementById("password").value;
-    var reTypedPassword = document.getElementById("confirmPassword").value;
-
-    if (isTextBoxEmpty(password)) {
-        document.getElementById("passwordMsg").innerHTML = "The password field must be filled out.";
-        return isPasswordMatch;
+    if (isTextBoxEmpty(password)) {      
+        return false;
     }
     if (password === reTypedPassword) {
         isPasswordMatch = true;
-        return isPasswordMatch;
+        return true;
     }
-    else {
-        passwordErrMsg = "Passwords does not match";
+    else if (!isPasswordMatch) {
+        $('#confirmPasswordTextBox').parents('.form-group').addClass('has-error');
+        $('#registrationErrorList ul').append('<li>' + $('#confirmPasswordTextBox').data('error-text') + '</li>');
+        return false;
     }
 
-    if (!isPasswordMatch) {
-        document.getElementById("passwordMsg").innerHTML = passwordErrMsg;
-        return isPasswordMatch;
-    }
+    return false;
 }
 
-function isValidEmail() {
-    var emailValue = document.getElementById("emailTextBox").value;
-    var emailErrMsg;
-    var isValidEmail = false;
-
-    emailValue = emailValue.trim();
+function isValidEmail(emailValue) {
 
     if (isTextBoxEmpty(emailValue)) {
-        emailErrMsg = "Email is blank. Please fill it in. Example: username@domain.com"
-        document.getElementById("emailMsg").innerHTML = emailErrMsg;
-        return isValidEmail;
+        return false;
     }
     else if (validateEmail(emailValue)) {
-        isValidEmail = true;
-        return isValidEmail;
+        return true;
     }
     else {
-        emailErrMsg = "Email format error. Example: username@domain.com";
-        document.getElementById("emailMsg").innerHTML = emailErrMsg;
-        return isValidEmail;
+        return false;
     }
 }
+
 
 function validateEmail(email) {
     var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;

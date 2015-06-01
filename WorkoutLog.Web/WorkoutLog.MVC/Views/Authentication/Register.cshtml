@@ -1,0 +1,72 @@
+﻿@model WorkoutLog.Core.Interfaces.IPersons
+
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*<h2>Register</h2>*@
+
+
+@using (Html.BeginForm())
+{
+    <div class="container top-edge form-horizontal">
+
+        <div class="row" id="registrationErrorList">
+            <div class="col-lg-12">
+                <div class="alert alert-danger" role="alert">
+                    <ul></ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("usernameLabel", "Username", new { @class = "col-lg-2 control-label" })
+            <div class="col-lg-4">
+                @Html.TextBoxFor(Model => Model.UserName, new { @class = "form-control", id = "usernameTextBox", data_error_text = "USERNAME field must be more than 3 characters in length." })
+            </div>
+            <div class="col-lg-6">
+                @Html.ValidationMessageFor(Model => Model.UserName, "", new { @class = "bg-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("emailLabel", "Email", new { @class = "col-lg-2 control-label" })
+            <div class="col-lg-4">
+                @Html.TextBoxFor(Model => Model.EmailAddress, new { @class = "form-control", id = "emailTextBox", data_error_text = "EMAIL format incorrect. Example: username@domain.com." })
+            </div>
+            <div class="col-lg-6">
+                @Html.ValidationMessageFor(Model => Model.EmailAddress, "", new { @class = "bg-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("PasswordLabel", "Password", new { @class = "col-lg-2 control-label" })
+
+            <div class="col-lg-4">
+                @Html.PasswordFor(Model => Model.UserPassword, new { @class = "form-control", id = "passwordTextBox", data_error_text = "PASSWORD field must be at least 3 characters in length." })
+            </div>
+            <div class="col-lg-6">
+                @Html.ValidationMessageFor(Model => Model.UserPassword, "", new { @class = "bg-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("ConfirmPassword", "Confirm Password", new { @class = "col-lg-2 control-label" })
+            <div class="col-lg-4">
+                @Html.PasswordFor(Model => Model.ConfirmPassword, new { @class = "form-control", id = "confirmPasswordTextBox", data_error_text = "CONFIRM PASSWORD field must be at least 3 characters in length and must be the exact match as the PASSSWORD field." })
+            </div>
+            <div class="col-lg-6">
+                @Html.ValidationMessageFor(Model => Model.ConfirmPassword, "", new { @class = "bg-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-lg-offset-2 col-lg-4">
+                <button id="registerButton" type="submit" class="btn btn-primary btn-submit-user" onclick="SubmitRegistrationEvent">REGISTER</button>
+            </div>
+        </div>
+
+    </div>
+}

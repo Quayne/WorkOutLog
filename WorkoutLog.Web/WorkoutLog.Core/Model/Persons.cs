@@ -26,5 +26,13 @@ namespace WorkoutLog.Core.Model
             get;
             set;
         }
+
+
+        public string ConfirmPassword
+        {
+            get;
+            set;
+            
+        }
     }
 }

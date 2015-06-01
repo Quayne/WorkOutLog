@@ -90,9 +90,9 @@ INSERT INTO ExerciseType (ExerciseName) VALUES( 'DEADLIFT WITH BANDS');
 GO
 
 -- Insert Persons records
-INSERT INTO Persons VALUES( 'quayne@gmail.com', 'Quayne', '123');
-INSERT INTO Persons VALUES( 'quayne@live.com', 'Brown', '123');
-INSERT INTO Persons VALUES( 'quayne@hotmail.com', 'Hazza', '123');
+INSERT INTO Persons VALUES( 'quayne@gmail.com', 'Quayne', 'mxJMdvlUin0sy46h7zFotTBSL+tYxlKYjOdyCFmBbto=');
+INSERT INTO Persons VALUES( 'quayne@live.com', 'Brown', 'mxJMdvlUin0sy46h7zFotTBSL+tYxlKYjOdyCFmBbto=');
+INSERT INTO Persons VALUES( 'quayne@hotmail.com', 'Hazza', 'mxJMdvlUin0sy46h7zFotTBSL+tYxlKYjOdyCFmBbto=');
 GO
 
 -- Insert Exercise records

@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkoutLog.Core", "WorkoutL
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkoutLog.Data", "WorkoutLog.Data\WorkoutLog.Data.csproj", "{CDA6D7C4-756D-4FF7-8245-6D2F829E5287}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkoutLog.MVC", "WorkoutLog.MVC\WorkoutLog.MVC.csproj", "{1013A7B8-22FE-434B-9263-C00B0113152C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{CDA6D7C4-756D-4FF7-8245-6D2F829E5287}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CDA6D7C4-756D-4FF7-8245-6D2F829E5287}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CDA6D7C4-756D-4FF7-8245-6D2F829E5287}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1013A7B8-22FE-434B-9263-C00B0113152C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1013A7B8-22FE-434B-9263-C00B0113152C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1013A7B8-22FE-434B-9263-C00B0113152C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1013A7B8-22FE-434B-9263-C00B0113152C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

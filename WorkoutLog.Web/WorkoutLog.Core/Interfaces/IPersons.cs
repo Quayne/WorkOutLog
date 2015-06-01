@@ -13,5 +13,7 @@ namespace WorkoutLog.Core.Interfaces
         string UserName { get; set; }
 
         string UserPassword { get; set; }
+
+        string ConfirmPassword { get; set; }
     }
 }

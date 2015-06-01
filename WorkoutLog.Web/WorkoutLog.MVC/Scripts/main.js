@@ -1,7 +1,11 @@
 ﻿$(document).ready(function () {
-    spaceTableButton();
 
-    $('.btn-save-workout').click(function () {        
+    spaceTableButton();
+    $('.btn-submit-user').click(function () {
+        return validatePerson();
+    });
+
+    $('.btn-save-workout').click(function () {
         return validateWorkOutProperties();
     });
 });

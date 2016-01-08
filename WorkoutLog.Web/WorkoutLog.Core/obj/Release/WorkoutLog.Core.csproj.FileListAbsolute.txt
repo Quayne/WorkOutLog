@@ -2,3 +2,7 @@ C:\Users\QuayneBrown\Source\Repos\WorkOutLog\WorkoutLog.Web\WorkoutLog.Core\bin\
 C:\Users\QuayneBrown\Source\Repos\WorkOutLog\WorkoutLog.Web\WorkoutLog.Core\bin\Release\WorkoutLog.Core.pdb
 C:\Users\QuayneBrown\Source\Repos\WorkOutLog\WorkoutLog.Web\WorkoutLog.Core\obj\Release\WorkoutLog.Core.dll
 C:\Users\QuayneBrown\Source\Repos\WorkOutLog\WorkoutLog.Web\WorkoutLog.Core\obj\Release\WorkoutLog.Core.pdb
+C:\Users\Delik\OneDrive\Projects\Git_Repo\WorkOutLog\WorkoutLog.Web\WorkoutLog.Core\bin\Release\WorkoutLog.Core.dll
+C:\Users\Delik\OneDrive\Projects\Git_Repo\WorkOutLog\WorkoutLog.Web\WorkoutLog.Core\bin\Release\WorkoutLog.Core.pdb
+C:\Users\Delik\OneDrive\Projects\Git_Repo\WorkOutLog\WorkoutLog.Web\WorkoutLog.Core\obj\Release\WorkoutLog.Core.dll
+C:\Users\Delik\OneDrive\Projects\Git_Repo\WorkOutLog\WorkoutLog.Web\WorkoutLog.Core\obj\Release\WorkoutLog.Core.pdb

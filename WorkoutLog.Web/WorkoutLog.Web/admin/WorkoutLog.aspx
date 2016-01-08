@@ -78,7 +78,7 @@
         <div class="form-group">
             <div class="col-lg-offset-2 col-lg-4">
                 <asp:Button ID="btnSave" runat="server" Text="Save" CssClass="btn btn-primary btn-save-workout" OnClick="btnSave_Click" />
-                <a class="btn btn-danger" href="http://localhost:56792/admin/index.aspx">Cancel</a>
+                <a class="btn btn-danger" href="index.aspx">Cancel</a>
             </div>
         </div>
     </div>

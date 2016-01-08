@@ -31,7 +31,7 @@ function validatePerson() {
         $('#usernameTextBox').parents('.form-group').addClass('has-error');
         $('#registrationErrorList ul').append('<li>' + $('#usernameTextBox').data('error-text') + '</li>');
         isValid = false;
-    }else {
+    } else {
         $('#usernameTextBox').parents('.form-group').removeClass('has-error');
     }
 
@@ -82,7 +82,7 @@ function isTextBoxEmpty(txtBoxInput) {
 
 function isValidUsername(username) {
 
-    if (isTextBoxEmpty(username)) {       
+    if (isTextBoxEmpty(username)) {
         return false;
     }
     else if (username.length < 4) {
@@ -95,10 +95,10 @@ function isValidUsername(username) {
 
 function isPasswordMatch(password) {
     var isPasswordMatch = false;
- 
+
     var reTypedPassword = $('#confirmPasswordTextBox').val();
 
-    if (isTextBoxEmpty(password)) {      
+    if (isTextBoxEmpty(password)) {
         return false;
     }
     if (password === reTypedPassword) {

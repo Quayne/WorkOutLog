@@ -59,7 +59,8 @@ namespace WorkoutLog.Data
 
         public List<Exercise> GetAllByKey(string key)
         {
-            return _provider.GetAllByKey(key);
+            //var exerciseList = _provider.GetAllByKey(key).OrderByDescending(x => x.CurrentDate);
+            return _provider.GetAllByKey(key).OrderByDescending(x => x.CurrentDate).ToList();
         }
 
         public Exercise GetByID(int Id)

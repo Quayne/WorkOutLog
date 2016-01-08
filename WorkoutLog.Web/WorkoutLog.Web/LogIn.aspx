@@ -134,12 +134,13 @@
                             <li>OOP</li>
                             <li>Abstract Class</li>
                             <li>Interfaces</li>
-                            <li>ASP.NET Built-in Login control</li>
+                            <li>LINQ</li>
                         </ul>
                     </div>
                     <div class="col-md-4">
                         <ul>
                             <li>Bootstrap</li>
+                            <li>ASP.NET Built-in Login control</li>
                             <li>Web Forms Master Page</li>
                             <li>Source Control(<a href="https://github.com/Quayne/WorkOutLog">GitHub</a>)</li>
                             <li>Visual Studio 2013</li>
@@ -161,13 +162,11 @@
                     <h2 class="text-center">Things to be done</h2>
                     <div class="col-md-12">
                         <ol>
-                            <li>Password hashing</li>
-                            <li>Make a copy of the current project in MVC</li>
+                            <li class="completed-task">Password hashing</li>
+                            <li><span class="completed-task">Make a copy of the current project in MVC.</span><a href="http://workoutlog-mvc.quayne.net/"> (MVC link)</a></li>
                             <li>Make a copy of the current project using AngularJS and Web API</li>
                             <li>Add password changing capability</li>
-                            <li>Allow member cancellation</li>
-                            <%--<li>Make dropdown items more realistic</li>--%>
-                            <li>Style login controls</li>
+                            <li>Allow member cancellation</li>                            
                         </ol>
                     </div>
                 </div>

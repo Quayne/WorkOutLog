@@ -16,4 +16,3 @@ C:\Users\Delik\OneDrive\Projects\Git_Repo\WorkOutLog\WorkoutLog.Web\WorkoutLog.C
 C:\Users\Delik\OneDrive\Projects\Git_Repo\WorkOutLog\WorkoutLog.Web\WorkoutLog.Core\bin\Debug\WorkoutLog.Core.pdb
 C:\Users\Delik\OneDrive\Projects\Git_Repo\WorkOutLog\WorkoutLog.Web\WorkoutLog.Core\obj\Debug\WorkoutLog.Core.dll
 C:\Users\Delik\OneDrive\Projects\Git_Repo\WorkOutLog\WorkoutLog.Web\WorkoutLog.Core\obj\Debug\WorkoutLog.Core.pdb
-C:\Users\Delik\OneDrive\Projects\Git_Repo\WorkOutLog\WorkoutLog.Web\WorkoutLog.Core\obj\Debug\WorkoutLog.Core.csprojResolveAssemblyReference.cache

@@ -12,4 +12,40 @@
     <ExerciseName>1</ExerciseName>
     <BodyParts>1</BodyParts>
   </Exercise>
+  <Exercise>
+    <ID>2</ID>
+    <CurrentDate>2016-01-08T17:07:43.116327-05:00</CurrentDate>
+    <ExerciseSets>1</ExerciseSets>
+    <Weights>90</Weights>
+    <Reps>10</Reps>
+    <EmailAddress>quayne@workout.com</EmailAddress>
+    <BodyPartID>3</BodyPartID>
+    <ExerciseTypeID>3</ExerciseTypeID>
+    <ExerciseName>3</ExerciseName>
+    <BodyParts>3</BodyParts>
+  </Exercise>
+  <Exercise>
+    <ID>3</ID>
+    <CurrentDate>2016-01-08T17:30:56.9077824-05:00</CurrentDate>
+    <ExerciseSets>1</ExerciseSets>
+    <Weights>45</Weights>
+    <Reps>10</Reps>
+    <EmailAddress>quayne@workout.com</EmailAddress>
+    <BodyPartID>4</BodyPartID>
+    <ExerciseTypeID>2</ExerciseTypeID>
+    <ExerciseName>2</ExerciseName>
+    <BodyParts>4</BodyParts>
+  </Exercise>
+  <Exercise>
+    <ID>4</ID>
+    <CurrentDate>2016-01-08T17:31:44.8133141-05:00</CurrentDate>
+    <ExerciseSets>1</ExerciseSets>
+    <Weights>60</Weights>
+    <Reps>10</Reps>
+    <EmailAddress>quayne@workout.com</EmailAddress>
+    <BodyPartID>2</BodyPartID>
+    <ExerciseTypeID>4</ExerciseTypeID>
+    <ExerciseName>4</ExerciseName>
+    <BodyParts>2</BodyParts>
+  </Exercise>
 </ArrayOfExercise>

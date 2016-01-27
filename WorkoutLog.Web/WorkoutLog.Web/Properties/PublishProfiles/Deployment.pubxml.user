@@ -7,6 +7,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <_PublishTargetUrl>ftp://ftp.Smarterasp.net/workout</_PublishTargetUrl>
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAA9TOgHqDiEGxU++4JahVsgAAAAACAAAAAAAQZgAAAAEAACAAAAAsC0+bMnrKcVHcPTbb4n5e5NpEfu1EMh3Z84u0cd0mBQAAAAAOgAAAAAIAACAAAAAsE/fX9sIuGUKUQXkLdFvxh5VGCPuz+NuekB6nMt0Z3CAAAAAEuyJ6hbitrwlI2ct7aCGzg74Gy8/yWhTn6iIYLuURoEAAAACVoWj8RqVXahrmp/2bGmWkczUroUiGtaRK37Z9ChnczJvF+LbQg1Jh/e9Xu97jLLMxABGjlBpQQ/RjRM9oIBkM</EncryptedPassword>
   </PropertyGroup>
   <ItemGroup>
     <File Include="admin/index.aspx">
@@ -19,7 +20,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/06/2016 19:10:16</publishTime>
     </File>
     <File Include="App_Data/exercise.xml">
-      <publishTime>01/06/2016 19:10:16</publishTime>
+      <publishTime>01/08/2016 17:31:44</publishTime>
     </File>
     <File Include="App_Data/exerciseType.xml">
       <publishTime>01/06/2016 19:10:16</publishTime>
@@ -31,16 +32,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/06/2016 20:03:42</publishTime>
     </File>
     <File Include="bin/WorkoutLog.Data.dll">
-      <publishTime>01/06/2016 20:03:42</publishTime>
+      <publishTime>01/08/2016 18:12:05</publishTime>
     </File>
     <File Include="bin/WorkoutLog.Web.dll">
-      <publishTime>01/07/2016 07:48:24</publishTime>
+      <publishTime>01/08/2016 18:12:05</publishTime>
     </File>
     <File Include="css/bootstrap.min.css">
       <publishTime>01/06/2016 19:10:16</publishTime>
     </File>
     <File Include="css/main.css">
-      <publishTime>01/06/2016 19:10:16</publishTime>
+      <publishTime>01/08/2016 18:00:56</publishTime>
     </File>
     <File Include="css/starter-template.css">
       <publishTime>01/06/2016 19:10:16</publishTime>
@@ -70,7 +71,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/06/2016 19:10:17</publishTime>
     </File>
     <File Include="Login.aspx">
-      <publishTime>01/06/2016 19:10:16</publishTime>
+      <publishTime>01/08/2016 18:06:56</publishTime>
     </File>
     <File Include="Registration.aspx">
       <publishTime>01/06/2016 19:10:16</publishTime>

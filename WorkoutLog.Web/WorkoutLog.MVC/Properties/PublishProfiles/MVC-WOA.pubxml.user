@@ -5,13 +5,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 -->
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <WebPublishMethod>FileSystem</WebPublishMethod>
-    <LastUsedBuildConfiguration>Release</LastUsedBuildConfiguration>
-    <LastUsedPlatform>Any CPU</LastUsedPlatform>
-    <SiteUrlToLaunchAfterPublish />
-    <LaunchSiteAfterPublish>True</LaunchSiteAfterPublish>
-    <ExcludeApp_Data>False</ExcludeApp_Data>
-    <publishUrl>C:\Users\Delik\OneDrive\Publish</publishUrl>
-    <DeleteExistingFiles>False</DeleteExistingFiles>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAASUZ9OWSZEiXaeFY6IqG7AAAAAACAAAAAAAQZgAAAAEAACAAAABuil1qeI5m4Ui85pBVIPNv60BgZdGbjxuX11MmDH67WAAAAAAOgAAAAAIAACAAAAD1Ro4RJoOnv109U6whnA8WE2zHnAJgxihFErupxr6USiAAAAAmQGr6CBrfl+PcAxlTKAKMQB8Q5MEzqI9z4FT335OI/UAAAAAw5v6amQpX9RsPX00+Pgn7rGbzJj1RbXNqvbaOn4X8HUot0wAuXmFE9W9Zyta8ZNjHTsLaHCveNc0VyaruqGO6</EncryptedPassword>
   </PropertyGroup>
 </Project>

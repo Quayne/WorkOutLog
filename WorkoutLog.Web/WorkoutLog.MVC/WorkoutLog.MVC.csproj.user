@@ -6,7 +6,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
-    <NameOfLastUsedPublishProfile>FTP</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>MVC-WOA</NameOfLastUsedPublishProfile>
     <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <ProjectExtensions>

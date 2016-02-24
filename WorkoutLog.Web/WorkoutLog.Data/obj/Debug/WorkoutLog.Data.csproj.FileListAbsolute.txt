@@ -26,3 +26,10 @@ C:\Users\Delik\OneDrive\Projects\Git_Repo\WorkOutLog\WorkoutLog.Web\WorkoutLog.D
 C:\Users\Delik\OneDrive\Projects\Git_Repo\WorkOutLog\WorkoutLog.Web\WorkoutLog.Data\obj\Debug\WorkoutLog.Data.csprojResolveAssemblyReference.cache
 C:\Users\Delik\OneDrive\Projects\Git_Repo\WorkOutLog\WorkoutLog.Web\WorkoutLog.Data\obj\Debug\WorkoutLog.Data.dll
 C:\Users\Delik\OneDrive\Projects\Git_Repo\WorkOutLog\WorkoutLog.Web\WorkoutLog.Data\obj\Debug\WorkoutLog.Data.pdb
+C:\Users\Delik\OneDrive\Projects\Git_Repo\WorkoutLog.Web\WorkoutLog.Data\bin\Debug\WorkoutLog.Data.dll
+C:\Users\Delik\OneDrive\Projects\Git_Repo\WorkoutLog.Web\WorkoutLog.Data\bin\Debug\WorkoutLog.Data.pdb
+C:\Users\Delik\OneDrive\Projects\Git_Repo\WorkoutLog.Web\WorkoutLog.Data\bin\Debug\WorkoutLog.Core.dll
+C:\Users\Delik\OneDrive\Projects\Git_Repo\WorkoutLog.Web\WorkoutLog.Data\bin\Debug\WorkoutLog.Core.pdb
+C:\Users\Delik\OneDrive\Projects\Git_Repo\WorkoutLog.Web\WorkoutLog.Data\obj\Debug\WorkoutLog.Data.csprojResolveAssemblyReference.cache
+C:\Users\Delik\OneDrive\Projects\Git_Repo\WorkoutLog.Web\WorkoutLog.Data\obj\Debug\WorkoutLog.Data.dll
+C:\Users\Delik\OneDrive\Projects\Git_Repo\WorkoutLog.Web\WorkoutLog.Data\obj\Debug\WorkoutLog.Data.pdb

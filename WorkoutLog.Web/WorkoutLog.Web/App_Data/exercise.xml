@@ -48,4 +48,16 @@
     <ExerciseName>4</ExerciseName>
     <BodyParts>2</BodyParts>
   </Exercise>
+  <Exercise>
+    <ID>5</ID>
+    <CurrentDate>2016-02-23T20:18:24.4787741-05:00</CurrentDate>
+    <ExerciseSets>2</ExerciseSets>
+    <Weights>45</Weights>
+    <Reps>10</Reps>
+    <EmailAddress>quayne@workout.com</EmailAddress>
+    <BodyPartID>3</BodyPartID>
+    <ExerciseTypeID>3</ExerciseTypeID>
+    <ExerciseName>3</ExerciseName>
+    <BodyParts>3</BodyParts>
+  </Exercise>
 </ArrayOfExercise>

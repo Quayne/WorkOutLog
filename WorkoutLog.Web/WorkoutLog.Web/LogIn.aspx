@@ -10,7 +10,6 @@
     <div class="container top-edge">
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
-                <
 
                 <p class="text-info">
                     <span class="bg-info">Email:</span> quayne@workout.com or tester@workout.com
@@ -122,7 +121,7 @@
                         </ul>
                     </div>
                 </div>
-             
+
                 <div class="row">
                     <h2 class="text-center">To Do's</h2>
                     <div class="col-md-12">
@@ -132,7 +131,7 @@
                             <li>Make a copy of the current project using AngularJS and Web API</li>
                             <li>Give user the ability to enter their own body party type and exercise type</li>
                             <li>Add password changing capability</li>
-                            <li>Allow member cancellation</li>                            
+                            <li>Allow member cancellation</li>
                         </ol>
                     </div>
                 </div>

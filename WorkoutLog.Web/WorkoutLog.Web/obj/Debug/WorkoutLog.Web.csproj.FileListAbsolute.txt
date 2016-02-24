@@ -37,3 +37,4 @@ C:\Users\Delik\OneDrive\Projects\Git_Repo\WorkOutLog\WorkoutLog.Web\WorkoutLog.W
 C:\Users\Delik\OneDrive\Projects\Git_Repo\WorkOutLog\WorkoutLog.Web\WorkoutLog.Web\obj\Debug\WorkoutLog.Web.csprojResolveAssemblyReference.cache
 C:\Users\Delik\OneDrive\Projects\Git_Repo\WorkOutLog\WorkoutLog.Web\WorkoutLog.Web\obj\Debug\WorkoutLog.Web.dll
 C:\Users\Delik\OneDrive\Projects\Git_Repo\WorkOutLog\WorkoutLog.Web\WorkoutLog.Web\obj\Debug\WorkoutLog.Web.pdb
+C:\Users\Delik\OneDrive\Projects\Git_Repo\WorkOutLog\WorkoutLog.Web\WorkoutLog.Web\bin\AspNet.ScriptManager.jQuery.dll

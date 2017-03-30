@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<ArrayOfPersons xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Persons>
+    <EmailAddress>quayne@workout.com</EmailAddress>
+    <UserName>Quayne</UserName>
+    <UserPassword>mxJMdvlUin0sy46h7zFotTBSL+tYxlKYjOdyCFmBbto=</UserPassword>
+  </Persons>
+</ArrayOfPersons>

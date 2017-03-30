@@ -1,7 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="/WorkoutLog.Master" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="WorkoutLog.Web.WorkoutTable" %>
-
-
-
+﻿<%@ Page Title="Exercises" Language="C#" MasterPageFile="/WorkoutLog.Master" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="WorkoutLog.Web.WorkoutTable" %>
 
 
 <asp:Content ID="Content5" ContentPlaceHolderID="Header" runat="Server">

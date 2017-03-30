@@ -46,8 +46,7 @@
                                         </tr>
                                         <tr>
                                             <td colspan="2">
-                                                <asp:CheckBox ID="RememberMe" runat="server" Text="Remember me next time." />
-                                            </td>
+                                                &nbsp;</td>
                                         </tr>
                                         <tr>
                                             <td align="center" colspan="2" style="color: Red;">
@@ -127,7 +126,7 @@
                     <div class="col-md-12">
                         <ol>
                             <li class="completed-task">Password hashing</li>
-                            <li><span class="completed-task">Make a copy of the current project in MVC.</span><a href="http://workoutlog-mvc.quayne.net/"> (MVC link)</a></li>
+                            <%--<li><span class="completed-task">Make a copy of the current project in MVC.</span><a href="http://workoutlog-mvc.quayne.net/"> (MVC link)</a></li>--%>
                             <li>Make a copy of the current project using AngularJS and Web API</li>
                             <li>Give user the ability to enter their own body party type and exercise type</li>
                             <li>Add password changing capability</li>

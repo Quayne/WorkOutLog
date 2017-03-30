@@ -1,0 +1,37 @@
+﻿.top-edge {
+    margin-top: 20px;
+}
+
+#form-header {
+    margin: 0;
+}
+/*
+#fun{
+   border: 1px solid #101010;
+    border-radius: 10px;
+}
+*/
+#timeRight {
+    text-align: right;
+}
+
+.fixed-column {
+    width: 140px;
+}
+
+.button-spacing {
+    margin-right: 6px;
+}
+
+.error {
+    display: none;
+    color: red;
+}
+
+.has-error .error {
+    display: block;
+}
+
+#errorList, #registrationErrorList {
+    display: none;
+}

@@ -50,7 +50,7 @@ namespace WorkoutLog.Data.SQLProviders
                 const string selectQuery = "SELECT * FROM Persons WHERE EmailAddress = @email AND UserPassword = @password";
 
                 SqlCommand command = new SqlCommand(selectQuery, conn);
-                command.Parameters.AddWithValue("@email", email);
+                command.Parameters.AddWithValue("@email", email.ToLower());
                 command.Parameters.AddWithValue("@password", password);
 
 
@@ -82,7 +82,7 @@ namespace WorkoutLog.Data.SQLProviders
                 {
                     conn.Open();
                     SqlCommand sql = new SqlCommand(cmd, conn);
-                    sql.Parameters.Add(new SqlParameter("@email", person.EmailAddress));
+                    sql.Parameters.Add(new SqlParameter("@email", person.EmailAddress.ToLower()));
                     sql.Parameters.Add(new SqlParameter("@password", person.UserPassword));
                     sql.Parameters.Add(new SqlParameter("@username", person.UserName));                
 
